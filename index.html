@@ -27,7 +27,9 @@
       <div class="lang-switch">
         <button class="lang-btn active" data-lang="ru">RU</button>
         <span class="sep">|</span>
-        <button class="lang-btn" data-lang="en">EN (International)</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="sep">|</span>
+        <button class="lang-btn" data-lang="ua">🇺🇦 UKR</button>
       </div>
     </div>
   </div>
@@ -504,8 +506,27 @@
   <section id="author" class="section author-section">
     <div class="container author-grid">
       <div class="author-img-wrapper">
-        <div class="author-frame">
-          <img src="assets/images/author_rupavati.jpg" alt="Рупавати — автор книги, шеф-повар и натуропат" class="author-photo">
+        <div class="author-frame flip-card" id="author-flip-card" onclick="toggleAuthorFlip()" title="Нажмите, чтобы заглянуть за кулисы ✨">
+          <div class="flip-card-inner">
+            <!-- Лицевая сторона: Рупавати -->
+            <div class="flip-card-front">
+              <img src="assets/images/author_rupavati.jpg" alt="Рупавати — автор книги, шеф-повар и натуропат" class="author-photo">
+              <div class="flip-hint-badge">
+                <i class="fa-solid fa-sparkles"></i> <span>Нажмите на фото ✨</span>
+              </div>
+            </div>
+            <!-- Обратная сторона: Пасхалка (Рупавати и Иван) -->
+            <div class="flip-card-back">
+              <img src="assets/images/author_backstage.jpg" alt="Рупавати и Иван — команда создания книги" class="author-photo">
+              <div class="flip-back-overlay">
+                <div class="flip-back-tag"><i class="fa-solid fa-heart"></i> Секретный бэкстейдж</div>
+                <h4>Команда с любовью</h4>
+                <p>«За каждым великим поваром стоит тот, кто с любовью моет кастрюли, дегустирует рецепты и верстает сайты!»</p>
+                <span class="flip-back-sub">Рупавати & Иван • Намаскар 🙏</span>
+                <div class="flip-back-reset"><i class="fa-solid fa-rotate-left"></i> Нажмите, чтобы перевернуть обратно</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="author-quote-badge">
           <i class="fa-solid fa-quote-left"></i>

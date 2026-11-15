@@ -6,3 +6,5 @@ assets/extracted_preview/
 __pycache__/
 *.pyc
 .venv/
+
+ivans foto/
