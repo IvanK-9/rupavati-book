@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Пища с любовью • Рупавати | Книга рецептов и мудрости Аюрведы</title>
+  <meta name="description" content="Книга осознанной лакто-вегетарианской кухни от шеф-повара и мастера Аюрведы Рупавати. Более 50 саттвичных рецептов для баланса тела и души.">
+  
+  <!-- Google Fonts: Cormorant Garamond + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- ВЕРХНЯЯ БЛАГОСТНАЯ СТРОКА-УВЕДОМЛЕНИЕ -->
+  <div class="top-announcement">
+    <div class="container flex-between">
+      <span><i class="fa-solid fa-heart-pulse"></i> Намаскар! Пища, приготовленная с молитвой и любовью, исцеляет тело и успокаивает ум 🙏</span>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <span class="sep">|</span>
+        <button class="lang-btn" data-lang="en">EN (International)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ШАПКА / НАВИГАЦИЯ (ВЫРОВНЕННАЯ, СТРОГАЯ, БЕЗ ПЕРЕНОСОВ СТРОК) -->
+  <header class="header">
+    <div class="container header-container">
+      
+      <!-- ЛОГОТИП: ТОЛЬКО ДУХОВНОЕ ИМЯ РУПАВАТИ -->
+      <a href="#hero" class="logo">
+        <span class="logo-sanskrit">रुपवती</span>
+        <div class="logo-text">
+          <span class="logo-title">РУПАВАТИ</span>
+          <span class="logo-subtitle">Пища с любовью</span>
+        </div>
+      </a>
+
+      <!-- АККУРАТНОЕ ВЫРОВНЕННОЕ МЕНЮ БЕЗ ПЕРЕНОСОВ СЛОВ -->
+      <nav class="nav-links">
+        <a href="#about-book" data-ru="О книге" data-en="About Book">О книге</a>
+        <a href="#audience" data-ru="Кому подходит" data-en="For Whom">Кому подходит</a>
+        <a href="#recipes" data-ru="Рецепты" data-en="Recipes">Рецепты</a>
+        <a href="#quiz" class="nav-quiz-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-ru="Тест на Доши" data-en="Dosha Quiz">Тест на Доши</span></a>
+        <a href="#author" data-ru="Об авторе" data-en="Author">Об авторе</a>
+        <a href="#order" class="nav-order-link" data-ru="Реквизиты" data-en="Payment">Реквизиты</a>
+      </nav>
+
+      <!-- ПРАВАЯ ЧАСТЬ: КНОПКА ЗАКАЗА И TELEGRAM В ОДНУ ЛИНИЮ -->
+      <div class="header-actions">
+        <a href="#order" class="btn btn-primary btn-header" data-ru="Получить книгу" data-en="Get Book">Получить книгу</a>
+        <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" class="btn-tg-header" title="Telegram-канал Рупавати">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Открыть меню">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН / HERO -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-seedling"></i> <span data-ru="Аюрведа • Лакто-вегетарианство • Саттва" data-en="Ayurveda • Lacto-Vegetarian • Sattva">Аюрведа • Лакто-вегетарианство • Саттва</span>
+        </div>
+        <h1 class="hero-title" data-ru="Еда как молитва,<br>приготовленная с любовью" data-en="Food as a Prayer,<br>Prepared with Love">
+          Еда как молитва,<br>приготовленная с любовью
+        </h1>
+        <p class="hero-desc" data-ru="Кулинарная книга и проводник в мир осознанного питания от шеф-повара с 20-летним стажем и мастера Аюрведы Рупавати. Более 50 саттвичных рецептов, дарящих здоровье, легкое пищеварение и внутренний покой." data-en="A cookbook and guide to mindful eating by 20-year restaurant chef and Ayurvedic practitioner Rupavati. Over 50 sattvic recipes bringing wellness, light digestion, and peace of mind.">
+          Кулинарная книга и проводник в мир осознанного питания от шеф-повара с 20-летним стажем и мастера Аюрведы Рупавати. Более 50 саттвичных рецептов, дарящих здоровье, легкое пищеварение и внутренний покой.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-num">114</span>
+            <span class="stat-label" data-ru="страниц мудрости" data-en="pages of wisdom">страниц мудрости</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">50+</span>
+            <span class="stat-label" data-ru="авторских блюд" data-en="curated recipes">авторских блюд</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">20+</span>
+            <span class="stat-label" data-ru="лет опыта шефа" data-en="years chef mastery">лет опыта шефа</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3</span>
+            <span class="stat-label" data-ru="доши в балансе" data-en="doshas in balance">доши в балансе</span>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#order" class="btn btn-primary btn-lg" data-ru="Скачать книгу (RU / EN)" data-en="Download Book (RU / EN)">
+            <i class="fa-solid fa-book-open"></i> Скачать книгу (RU / EN)
+          </a>
+          <button class="btn btn-secondary btn-lg" onclick="openPreviewModal()">
+            <i class="fa-regular fa-eye"></i> <span data-ru="Полистать страницы" data-en="Look Inside">Полистать страницы</span>
+          </button>
+        </div>
+
+        <div class="hero-tg-invite">
+          <i class="fa-brands fa-telegram tg-color"></i>
+          <span data-ru="Телеграм-канал автора: ежедневные рецепты, советы по специям и живое общение" data-en="Author's Telegram channel: daily recipes, spice tips & mindful vibes">Телеграм-канал автора: ежедневные рецепты, советы по специям и живое общение</span>
+          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" class="tg-link" data-ru="Присоединиться →" data-en="Join here →">Присоединиться →</a>
+        </div>
+      </div>
+
+      <!-- 3D МОКАП КНИГИ -->
+      <div class="hero-visual">
+        <div class="book-container">
+          <div class="book-card" onclick="openPreviewModal()" title="Нажмите, чтобы полистать фрагмент книги">
+            <img src="assets/images/book_cover.jpg" alt="Обложка книги Пища с любовью от Рупавати" class="book-cover-img">
+            <div class="book-badge" data-ru="Доступна на RU и EN" data-en="Available in RU & EN">Доступна на RU и EN</div>
+            <div class="book-hint"><i class="fa-solid fa-hand-pointer"></i> <span data-ru="Нажмите, чтобы полистать" data-en="Click to preview">Нажмите, чтобы полистать</span></div>
+          </div>
+          <div class="book-aura"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: ТРИ ПОТОКА / ДЛЯ КОГО ЭТА КНИГА -->
+  <section id="audience" class="section audience-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading" data-ru="Гармония для каждого" data-en="Harmony for Everyone">Гармония для каждого</span>
+        <h2 class="section-title" data-ru="Книга создана для тех, кто ищет вкус, здоровье и чистоту" data-en="Created for Those Seeking Flavor, Health, and Purity">
+          Книга создана для тех, кто ищет вкус, здоровье и чистоту
+        </h2>
+        <p class="section-desc" data-ru="Саттвичная кухня объединяет древнюю духовную мудрость, современную нутрициологию и ресторанное искусство." data-en="Sattvic cooking bridges ancient spiritual wisdom, modern nutrition, and culinary artistry.">
+          Саттвичная кухня объединяет древнюю духовную мудрость, современную нутрициологию и ресторанное искусство.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+        <!-- КАРТОЧКА 1: ДЛЯ ЙОГОВ -->
+        <div class="audience-card">
+          <div class="card-icon"><i class="fa-solid fa-om"></i></div>
+          <h3 data-ru="Практикующим йогу и духовным искателям" data-en="Yoga Practitioners & Seekers">Практикующим йогу и духовным искателям</h3>
+          <p class="card-text" data-ru="Принцип Ахимсы (ненасилия) и Саттва-гуна (чистота и благость). Вы узнаете, как пища влияет на медитацию, тонкое тело и концентрацию ума. Пища как служение и подношение." data-en="The principle of Ahimsa (non-harming) and Sattva-guna (purity). Learn how food elevates meditation, the subtle body, and mental clarity. Food as devotion.">
+            Принцип Ахимсы (ненасилия) и Саттва-гуна (чистота и благость). Вы узнаете, как пища влияет на медитацию, тонкое тело и концентрацию ума. Пища как служение и подношение.
+          </p>
+          <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Тонкая энергетика и прана продуктов" data-en="Subtle prana and vital energy">Тонкая энергетика и прана продуктов</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Чистота сознания повара во время готовки" data-en="Cook's mindset & meditation while cooking">Чистота сознания повара во время готовки</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Масло Гхи, саттвичные специи и травы" data-en="Ghee, pure spices and healing herbs">Масло Гхи, саттвичные специи и травы</span></li>
+          </ul>
+        </div>
+
+        <!-- КАРТОЧКА 2: ДЛЯ ЗДОРОВЬЯ -->
+        <div class="audience-card featured">
+          <div class="popular-tag" data-ru="Оздоровление ЖКТ" data-en="Digestive Wellness">Оздоровление ЖКТ</div>
+          <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3 data-ru="Тем, кто хочет восстановить здоровье и баланс" data-en="For Health & Body Reset">Тем, кто хочет восстановить здоровье и баланс</h3>
+          <p class="card-text" data-ru="Устали от тяжести после еды, вздутий и упадка сил? Аюрведа учит разжигать огонь пищеварения (Агни) и подбирать рацион под свою дошу (Вата, Питта, Капха)." data-en="Struggling with bloating, sluggish digestion, or energy dips? Ayurveda restores your digestive fire (Agni) with meals matched to your dosha constitution.">
+            Устали от тяжести после еды, вздутий и упадка сил? Аюрведа учит разжигать огонь пищеварения (Агни) и подбирать рацион под свою дошу (Вата, Питта, Капха).
+          </p>
+          <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Легкость в теле без диет и голоданий" data-en="Lightness without grueling diets">Легкость в теле без диет и голоданий</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Специи против воспалений и для метаболизма" data-en="Anti-inflammatory spices for metabolism">Специи против воспалений и для метаболизма</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Режим питания и сна по ритмам природы" data-en="Daily and seasonal natural bio-rhythms">Режим питания и сна по ритмам природы</span></li>
+          </ul>
+        </div>
+
+        <!-- КАРТОЧКА 3: ДЛЯ КУЛИНАРОВ И СЕМЬИ -->
+        <div class="audience-card">
+          <div class="card-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3 data-ru="Гурманам, кулинарам и заботливым семьям" data-en="Gourmets & Family Cooks">Гурманам, кулинарам и заботливым семьям</h3>
+          <p class="card-text" data-ru="Растительная кухня — это не пресные овощи на пару! Это фейерверк вкусов, ароматов и текстур от шефа с 20-летним ресторанным бэкграундом. Блюда, которые полюбят даже мясоеды." data-en="Plant-based meals shouldn't be bland! Experience vibrant aromas, colors and textures crafted by a seasoned restaurant chef. Meals everyone in the family loves.">
+            Растительная кухня — это не пресные овощи на пару! Это фейерверк вкусов, ароматов и текстур от шефа с 20-летним ресторанным бэкграундом. Блюда, которые полюбят даже мясоеды.
+          </p>
+          <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Сытные супы: Дал, Кичари, суп-пюре, уха" data-en="Satisfying hearty soups & rich stews">Сытные супы: Дал, Кичари, суп-пюре, уха</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Кутабы, манго-карри, полезная пицца" data-en="Kutabs, mango-curry, artisanal pizza">Кутабы, манго-карри, полезная пицца</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-ru="Десерты: полезный Наполеон и чизкейк" data-en="Guilt-free Napoleon cake & cheesecakes">Десерты: полезный Наполеон и чизкейк</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: ИНТЕРАКТИВНЫЙ ТЕСТ НА ДОШИ (ВАУ-ЭЛЕМЕНТ) -->
+  <section id="quiz" class="section quiz-section">
+    <div class="container">
+      <div class="quiz-wrapper">
+        <div class="quiz-intro text-center">
+          <span class="sub-heading-accent"><i class="fa-solid fa-sparkles"></i> Интерактивный Аюрведический тест</span>
+          <h2>Узнайте свою дошу и персональные блюда из книги</h2>
+          <p>Ответьте на 3 вопроса (можно кликать или нажимать клавиши 1, 2, 3 на клавиатуре), чтобы определить конституцию тела.</p>
+        </div>
+
+        <div id="quiz-container" class="quiz-card">
+          <!-- Вопрос 1 -->
+          <div class="quiz-step active" data-step="1">
+            <span class="quiz-progress">Вопрос 1 из 3: Телосложение (Клавиши 1, 2, 3 или клик)</span>
+            <h4>Какое у вас телосложение от природы?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="vata">
+                <div class="opt-content">
+                  <strong>1. Хрупкое, тонкие кости</strong>
+                  <p>Трудно набрать вес, сухая кожа, часто мерзнут руки и ноги</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="pitta">
+                <div class="opt-content">
+                  <strong>2. Среднее, спортивное</strong>
+                  <p>Хороший мышечный тонус, легко бросает в жар, теплые ладони</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="kapha">
+                <div class="opt-content">
+                  <strong>3. Крепкое, плотное</strong>
+                  <p>Широкие кости, мягкие формы, легко набираю вес, кожа гладкая</p>
+                </div>
+              </label>
+            </div>
+            <button class="btn btn-primary next-btn" onclick="nextQuizStep(2)">Далее →</button>
+          </div>
+
+          <!-- Вопрос 2 -->
+          <div class="quiz-step" data-step="2">
+            <span class="quiz-progress">Вопрос 2 из 3: Пищеварение</span>
+            <h4>Как работает ваше пищеварение и аппетит?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="vata">
+                <div class="opt-content">
+                  <strong>1. Нерегулярный аппетит</strong>
+                  <p>Иногда забываю поесть, склонность к вздутиям или сухости</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="pitta">
+                <div class="opt-content">
+                  <strong>2. Сильный, горячий голод</strong>
+                  <p>Если вовремя не поем — раздражаюсь, пищеварение быстрое</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="kapha">
+                <div class="opt-content">
+                  <strong>3. Медленное, стабильное</strong>
+                  <p>Могу долго не есть, после еды иногда тянет в сон, пищеварение размеренное</p>
+                </div>
+              </label>
+            </div>
+            <div class="quiz-nav">
+              <button class="btn btn-outline" onclick="prevQuizStep(1)">← Назад</button>
+              <button class="btn btn-primary next-btn" onclick="nextQuizStep(3)">Далее →</button>
+            </div>
+          </div>
+
+          <!-- Вопрос 3 -->
+          <div class="quiz-step" data-step="3">
+            <span class="quiz-progress">Вопрос 3 из 3: Эмоции и стресс</span>
+            <h4>Какова ваша естественная реакция на напряжение и усталость?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="vata">
+                <div class="opt-content">
+                  <strong>1. Тревожность и суета</strong>
+                  <p>Трудно остановить поток мыслей, нарушается сон, хаос в делах</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="pitta">
+                <div class="opt-content">
+                  <strong>2. Раздражительность и перфекционизм</strong>
+                  <p>Хочется все контролировать, вспыхиваю, требую идеала от себя и других</p>
+                </div>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="kapha">
+                <div class="opt-content">
+                  <strong>3. Апатия и нежелание двигаться</strong>
+                  <p>Ухожу в себя, хочется укутаться в плед и съесть что-то сладкое</p>
+                </div>
+              </label>
+            </div>
+            <div class="quiz-nav">
+              <button class="btn btn-outline" onclick="prevQuizStep(2)">← Назад</button>
+              <button class="btn btn-primary" onclick="calculateQuizResult()">Узнать свой результат <i class="fa-solid fa-sparkles"></i></button>
+            </div>
+          </div>
+
+          <!-- Результат теста -->
+          <div id="quiz-result" class="quiz-result" style="display: none;">
+            <div class="result-badge"><i class="fa-solid fa-dharmachakra"></i> Ваш аюрведический профиль</div>
+            <h3 id="result-title">Ваша доша: Вата (Воздух и Эфир)</h3>
+            <p id="result-desc">Вам необходимо тепло, маслянистость и заземление. Избегайте холодной сухомятки, отдавайте предпочтение согревающим супам с маслом Гхи.</p>
+            
+            <div class="result-dish-box">
+              <h4>Рекомендованные блюда для вас из книги:</h4>
+              <div id="result-dishes" class="result-dishes-grid">
+                <!-- Заполняется динамически скриптом -->
+              </div>
+            </div>
+
+            <div class="result-cta">
+              <p>Все подробные рецепты, правила балансировки и травы — на страницах книги «Пища с любовью».</p>
+              <a href="#order" class="btn btn-primary">Получить книгу с рецептами для вашей доши</a>
+              <button class="btn btn-outline" onclick="resetQuiz()">Пройти тест заново</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: ИДЕАЛЬНО КАДРИРОВАННЫЕ КАРТИНКИ РЕЦЕПТОВ (АККУРАТНЫЕ, КРАСИВЫЕ) -->
+  <section id="recipes" class="section recipes-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading" data-ru="Гастрономическое путешествие" data-en="Culinary Journey">Гастрономическое путешествие</span>
+        <h2 class="section-title" data-ru="Избранные рецепты из 114 страниц книги" data-en="Featured Recipes from the 114 Pages">
+          Избранные рецепты из 114 страниц книги
+        </h2>
+        <p class="section-desc" data-ru="Все блюда сфотографированы и подробно расписаны: ингредиенты, специи, время и лечебные свойства." data-en="Every recipe comes with full photography, exact spices, and Ayurvedic healing properties.">
+          Все блюда сфотографированы и подробно расписаны: ингредиенты, специи, время и лечебные свойства.
+        </p>
+
+        <!-- Категории-фильтры -->
+        <div class="recipe-filters">
+          <button class="filter-btn active" data-filter="all">Все блюда</button>
+          <button class="filter-btn" data-filter="breakfast">Завтраки</button>
+          <button class="filter-btn" data-filter="soup">Супы</button>
+          <button class="filter-btn" data-filter="main">Основные</button>
+          <button class="filter-btn" data-filter="dessert">Десерты</button>
+        </div>
+      </div>
+
+      <div class="recipes-grid">
+        <!-- Блюдо 1: Суп Дал (Идеальное фото) -->
+        <div class="recipe-card" data-category="soup">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_dal_clean.jpg" alt="Традиционный суп Дал">
+            <span class="recipe-tag">Супы • Стр. 70</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Золотой суп Дал</h4>
+            <p>Классический индийский суп из маша с куркумой, кумином и томлёным маслом гхи. Идеальный белок и чистая энергия.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> 35 мин</span>
+              <span><i class="fa-solid fa-fire"></i> Баланс Вата/Капха</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 2: Манго-карри (Идеальное фото) -->
+        <div class="recipe-card" data-category="main">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_mango_clean.jpg" alt="Манго-карри">
+            <span class="recipe-tag">Основные • Стр. 93</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Нежное Манго-Карри</h4>
+            <p>Удивительный баланс сладкого манго, кокосовых сливок и пряных нот кориандра и имбиря. Настоящий ресторанный шедевр.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> 30 мин</span>
+              <span><i class="fa-solid fa-sparkles"></i> 6 вкусов</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 3: Чизкейк с черносливом (Идеальное фото) -->
+        <div class="recipe-card" data-category="dessert">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_cheesecake_clean.jpg" alt="Чизкейк с черносливом">
+            <span class="recipe-tag">Десерты • Стр. 100</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Чизкейк с черносливом</h4>
+            <p>Нежный творожный десерт без яиц и рафинированного сахара. Пряный чернослив и бархатистая текстура домашнего уюта.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> 50 мин</span>
+              <span><i class="fa-solid fa-heart"></i> Без яиц</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 4: Крем-суп из брокколи (Идеальное фото) -->
+        <div class="recipe-card" data-category="soup">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_broccoli_clean.jpg" alt="Крем-суп из брокколи">
+            <span class="recipe-tag">Супы • Стр. 73</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Крем-суп из свежей брокколи</h4>
+            <p>Шелковистый изумрудный суп со сливками, мускатным орехом и хрустящими сухариками. Любимое блюдо для легкости в теле.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> 25 мин</span>
+              <span><i class="fa-solid fa-leaf"></i> Детокс</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 5: Кутабы с сыром (Идеальное фото) -->
+        <div class="recipe-card" data-category="main">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_kutabs_clean.jpg" alt="Кутабы с зеленью и сыром">
+            <span class="recipe-tag">Основные • Стр. 80</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Кутабы с зеленью и сыром</h4>
+            <p>Тончайшее пресное тесто, горы свежей зелени, нежный домашний сыр и аппетитная корочка со сливочным маслом.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> 40 мин</span>
+              <span><i class="fa-solid fa-users"></i> Семейное блюдо</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 6: Наполеон (Идеальное фото) -->
+        <div class="recipe-card" data-category="dessert">
+          <div class="recipe-img-box">
+            <img src="assets/images/dish_napoleon_clean.jpg" alt="Вегетарианский Наполеон">
+            <span class="recipe-tag">Десерты • Стр. 101</span>
+          </div>
+          <div class="recipe-body">
+            <h4>Праздничный торт «Наполеон»</h4>
+            <p>Воздушные хрустящие слоёные коржи и заварной саттвичный крем с натуральной стручковой ванилью без яиц.</p>
+            <div class="recipe-meta">
+              <span><i class="fa-regular fa-clock"></i> Праздник</span>
+              <span><i class="fa-solid fa-star"></i> Хит книги</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-40">
+        <button class="btn btn-secondary btn-lg" onclick="openPreviewModal()">
+          <i class="fa-solid fa-book-open"></i> Посмотреть полное оглавление всех 114 страниц
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: ОБ АВТОРЕ / РУПАВАТИ -->
+  <section id="author" class="section author-section">
+    <div class="container author-grid">
+      <div class="author-img-wrapper">
+        <div class="author-frame">
+          <img src="assets/images/author_rupavati.jpg" alt="Рупавати — автор книги, шеф-повар и натуропат" class="author-photo">
+        </div>
+        <div class="author-quote-badge">
+          <i class="fa-solid fa-quote-left"></i>
+          <span>«Хочешь любви — люби сам. Хочешь заботы — заботься о других через тепло пищи»</span>
+        </div>
+      </div>
+
+      <div class="author-bio">
+        <span class="sub-heading" data-ru="Об авторе" data-en="About the Author">Об авторе</span>
+        <h2 class="section-title" data-ru="Рупавати: путь от шеф-повара ресторанов к духовной кулинарии" data-en="Rupavati: From Executive Chef to Mindful Cuisine">
+          Рупавати: путь от шеф-повара ресторанов к духовной кулинарии
+        </h2>
+        
+        <p class="bio-lead">
+          <strong>Рупавати</strong> (санскр. <em>«женщина, наполненная прекрасным»</em>) — духовное имя, дарованное во время инициации в духовную практику, ставшее её жизненным ориентиром и кулинарной миссией.
+        </p>
+
+        <div class="bio-milestones">
+          <div class="milestone-item">
+            <div class="milestone-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="milestone-text">
+              <strong>Академическое образование и 20+ лет практики</strong>
+              <p>Окончила Академию и колледж общественного питания. Шеф-повар в ресторанах и кафе высшего уровня.</p>
+            </div>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+            <div class="milestone-text">
+              <strong>Дипломированный специалист по Аюрведе и натуропатии</strong>
+              <p>Глубокое изучение трав, специй, свойств масел холодного отжима и индивидуальных конституций тела.</p>
+            </div>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div class="milestone-text">
+              <strong>Кулинария как форма служения и молитвы</strong>
+              <p>Переход на чистое лакто-вегетарианство. Каждое блюдо готовится в медитативном состоянии с пожеланием мира и добра.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="author-connect-box">
+          <p><i class="fa-brands fa-telegram"></i> Рупавати открыто делится ежедневным опытом в своем Telegram-канале:</p>
+          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-telegram"></i> Читать блог Рупавати в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: МОСТ В TELEGRAM-КАНАЛ (СИНЕРГИЯ САЙТА И ТЕЛЕГРАМА) -->
+  <section id="telegram-bridge" class="section tg-bridge-section">
+    <div class="container">
+      <div class="tg-bridge-box">
+        <div class="tg-bridge-content">
+          <div class="tg-label"><i class="fa-brands fa-telegram"></i> Официальный канал Рупавати</div>
+          <h2>Telegram — сердце нашего сообщества</h2>
+          <p>Сайт помогает сохранить рецепты и структуру, а в Telegram-канале кипит ежедневная жизнь: закулисье готовки, ответы Рупавати на вопросы подписчиков, утренние настройки и анонсы встреч.</p>
+          <ul class="tg-perks">
+            <li><i class="fa-solid fa-circle-check"></i> Каждую неделю — новый эксклюзивный рецепт недели</li>
+            <li><i class="fa-solid fa-circle-check"></i> Аудио-подкасты об Аюрведе и смене сезонов</li>
+            <li><i class="fa-solid fa-circle-check"></i> Живой чат единомышленников и поддержка</li>
+          </ul>
+          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" class="btn btn-tg-large">
+            <i class="fa-brands fa-telegram"></i> Перейти в Telegram-канал Рупавати
+          </a>
+        </div>
+        <div class="tg-bridge-mockup">
+          <div class="tg-phone-frame">
+            <div class="tg-msg tg-author-msg">
+              <strong>Рупавати • Пища с любовью</strong>
+              <p>Доброе утро, дорогие! Намаскар 🙏 Сегодня готовим золотистый суп Дал. Секрет его легкости — в правильной обжарке кумина в масле гхи...</p>
+              <span class="tg-time">09:15</span>
+            </div>
+            <div class="tg-msg tg-reader-msg">
+              <strong>Ольга:</strong>
+              <p>Рупавати, спасибо огромное за рецепт кутабов! Муж съел три штуки и попросил готовить так всегда! ❤️</p>
+              <span class="tg-time">11:42</span>
+            </div>
+            <div class="tg-msg tg-reader-msg">
+              <strong>Михаил:</strong>
+              <p>После перехода на рецепты по дошам прошла тяжесть в желудке. Низкий поклон! 🙏</p>
+              <span class="tg-time">14:05</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ-ВИЗИОНЕР: БУДУЩАЯ ЭКОСИСТЕМА (ЗАГЛУШКИ ДЛЯ МАСШТАБИРОВАНИЯ) -->
+  <section id="ecosystem" class="section ecosystem-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading-accent">Перспектива развития</span>
+        <h2 class="section-title">Экосистема проектов Рупавати</h2>
+        <p class="section-desc">Книга — это только первая ступень. Мы создаем пространство целостного здоровья, объединяющее обучение, клуб и личные практики.</p>
+      </div>
+
+      <div class="ecosystem-grid">
+        <!-- Сервис 1: Закрытый клуб -->
+        <div class="service-card" onclick="openEcosystemModal('Аюрведический клуб подписки', 'Ежемесячный клуб здорового питания: сезонные меню на каждую неделю, списки покупок, закрытые прямые эфиры с Рупавати и сообщество поддержки.')">
+          <div class="service-badge soon">В разработке</div>
+          <div class="service-icon"><i class="fa-solid fa-users-rays"></i></div>
+          <h4>Закрытый клуб «Пища в Благости»</h4>
+          <p>Еженедельное сезонное меню под ключ, чек-листы покупок и живые кулинарные эфиры с разбором ваших блюд.</p>
+          <span class="service-more">Подробнее о модуле →</span>
+        </div>
+
+        <!-- Сервис 2: Онлайн-курс -->
+        <div class="service-card" onclick="openEcosystemModal('Видео-курс: Специи и Аюрведа', 'Глубокий практический видео-курс от Рупавати: как специи лечат болезни, трансформируют вкус привычных овощей и гармонизируют эмоциональный фон.')">
+          <div class="service-badge soon">Скоро</div>
+          <div class="service-icon"><i class="fa-solid fa-play"></i></div>
+          <h4>Видео-курс «Специи — душа Земли»</h4>
+          <p>Пошаговые видео-уроки по искусству специй, приготовлению лечебного Гхи и соусов на уровне шеф-повара.</p>
+          <span class="service-more">Подробнее о модуле →</span>
+        </div>
+
+        <!-- Сервис 3: Ретриты -->
+        <div class="service-card" onclick="openEcosystemModal('Кулинарные и йога-ретриты', 'Выездные программы на природе: глубокая йога, очищение организма, медитации и авторское саттвичное питание от Рупавати трижды в день.')">
+          <div class="service-badge planned">Планируется</div>
+          <div class="service-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+          <h4>Выездные йога- и детокс-ретриты</h4>
+          <p>Живые программы перезагрузки тела и ума: йога, лесной воздух, лекции по Аюрведе и персональное питание от автора.</p>
+          <span class="service-more">Подробнее о модуле →</span>
+        </div>
+
+        <!-- Сервис 4: Индивидуальные консультации -->
+        <div class="service-card" onclick="openEcosystemModal('Персональный аюрведический разбор', 'Индивидуальная консультация: детальный анализ конституции тела (Пракрити и Викрити), составление персональной карты продуктов и режима дня.')">
+          <div class="service-badge soon">Запись в лист ожидания</div>
+          <div class="service-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+          <h4>Персональная карта питания</h4>
+          <p>Индивидуальный подбор продуктов, трав и режима дня под вашу конкретную дошу и состояние здоровья.</p>
+          <span class="service-more">Подробнее о модуле →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ: ТАРИФЫ И ОПЛАТА (РЕАЛЬНЫЕ РЕКВИЗИТЫ РУПАВАТИ) -->
+  <section id="order" class="section order-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading" data-ru="Приобрести книгу" data-en="Get Your Copy">Приобрести книгу & Донаты</span>
+        <h2 class="section-title" data-ru="Выберите удобный формат книги" data-en="Choose Your Edition">
+          Получить книгу «Пища с любовью»
+        </h2>
+        <p class="section-desc" data-ru="Электронная книга открывается на смартфонах, планшетах и компьютерах в высоком типографском разрешении." data-en="Instant digital delivery optimized for all tablets, phones, and print reading.">
+          Книга в формате PDF (114 страниц) оптимизирована для чтения на планшете и смартфоне. Выберите удобный способ оплаты или внесите благотворительный взнос (Дану).
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- ТАРИФ 1: УКРАИНА / ПРИВАТБАНК -->
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Издание на русском языке</h3>
+            <span class="edition-sub">Оплата по Украине (ПриватБанк)</span>
+            <div class="price-tag">
+              <span class="currency">₴</span>
+              <span class="amount">490</span>
+              <span class="period">или донат от сердца</span>
+            </div>
+          </div>
+          <ul class="price-features">
+            <li><i class="fa-solid fa-check"></i> Полная версия: 114 страниц в высоком качестве</li>
+            <li><i class="fa-solid fa-check"></i> Более 50 рецептов с пошаговыми фото блюд</li>
+            <li><i class="fa-solid fa-check"></i> Быстрый перевод на карту ПриватБанка</li>
+            <li><i class="fa-solid fa-check"></i> Моментальная ссылка на скачивание книги</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="openOrderModal('Издание по Украине (490 ₴ / ПриватБанк)', 'ua')">
+            <i class="fa-solid fa-credit-card"></i> Оплатить на Приват (Украина)
+          </button>
+        </div>
+
+        <!-- ТАРИФ 2: ЕВРОПА И МИР / PAYPAL -->
+        <div class="price-card featured">
+          <div class="popular-tag">Международная оплата</div>
+          <div class="price-header">
+            <h3>English & Russian Edition</h3>
+            <span class="edition-sub">По Европе и миру через PayPal</span>
+            <div class="price-tag">
+              <span class="currency">€</span>
+              <span class="amount">15</span>
+              <span class="period">/ 19 $ (PayPal)</span>
+            </div>
+          </div>
+          <ul class="price-features">
+            <li><i class="fa-solid fa-check"></i> <strong>Оба языка:</strong> русское или английское издание</li>
+            <li><i class="fa-solid fa-check"></i> Удобная оплата через <strong>PayPal</strong> в 1 клик</li>
+            <li><i class="fa-solid fa-check"></i> Европейские и международные карты Visa / Mastercard</li>
+            <li><i class="fa-solid fa-check"></i> Моментальная доставка PDF на email</li>
+          </ul>
+          <button class="btn btn-primary btn-block" onclick="openOrderModal('Международное издание (15 € / $19 / PayPal)', 'eu')">
+            <i class="fa-brands fa-paypal"></i> Оплатить через PayPal (Европа)
+          </button>
+        </div>
+
+        <!-- ТАРИФ 3: БЛАГОТВОРИТЕЛЬНОСТЬ / ДОНАТ -->
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Донат и поддержка автора</h3>
+            <span class="edition-sub">Дана (пожертвование от сердца)</span>
+            <div class="price-tag">
+              <span class="currency"><i class="fa-solid fa-heart"></i></span>
+              <span class="amount" style="font-size: 34px;">Свободная</span>
+              <span class="period">сумма</span>
+            </div>
+          </div>
+          <ul class="price-features">
+            <li><i class="fa-solid fa-check"></i> Поддержка кулинарной деятельности Рупавати</li>
+            <li><i class="fa-solid fa-check"></i> Вклад в издание будущей книги о травах</li>
+            <li><i class="fa-solid fa-check"></i> Получение книги в знак признательности</li>
+            <li><i class="fa-solid fa-check"></i> Благодарственная молитва от автора</li>
+          </ul>
+          <button class="btn btn-outline btn-block" onclick="openOrderModal('Донат / Свободная сумма (Дана)', 'donate')">
+            <i class="fa-solid fa-hand-holding-heart"></i> Внести донат от сердца
+          </button>
+        </div>
+      </div>
+
+      <!-- ЛИД-МАГНИТ ДЛЯ СОМНЕВАЮЩИХСЯ -->
+      <div class="lead-magnet-card">
+        <div class="lead-content">
+          <span class="lead-tag"><i class="fa-solid fa-gift"></i> Подарок от Рупавати</span>
+          <h3>Хотите сначала познакомиться с рецептами ближе?</h3>
+          <p>Скачайте бесплатно мини-гид <strong>«Аюрведическая аптечка специй + 3 рецепта на каждый день»</strong> прямо сейчас.</p>
+        </div>
+        <form class="lead-form" onsubmit="handleLeadMagnet(event)">
+          <input type="text" placeholder="Ваше имя" required class="form-input">
+          <input type="text" placeholder="Telegram @username или e-mail" required class="form-input">
+          <button type="submit" class="btn btn-secondary">Получить подарок бесплатно</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-sanskrit">रुपवती</span>
+          <div class="logo-text">
+            <span class="logo-title">РУПАВАТИ</span>
+            <span class="logo-subtitle">Пища с любовью</span>
+          </div>
+        </div>
+        <p class="footer-motto">Готовьте с открытым сердцем. Пусть каждое блюдо приносит радость, здоровье и мир в ваш дом. Намаскар 🙏</p>
+        <div class="footer-socials">
+          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="mailto:yuli.gorb@gmail.com" title="Email / PayPal"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="#about-book">О книге</a></li>
+          <li><a href="#author">Об авторе</a></li>
+          <li><a href="#recipes">Примеры рецептов</a></li>
+          <li><a href="#quiz">Тест на Доши</a></li>
+          <li><a href="#ecosystem">Будущие программы</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Реквизиты</h5>
+        <ul>
+          <li><a href="#order">PayPal: yuli.gorb@gmail.com</a></li>
+          <li><a href="#order">ПриватБанк (Украина)</a></li>
+          <li><a href="#telegram-bridge">Telegram-сообщество</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-dev">
+        <h5>О проекте</h5>
+        <p class="dev-note">
+          <i class="fa-solid fa-code"></i> Сделано с теплом и благостью для Рупавати. Платформа готова к масштабированию и автоматизации оплат.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>© 2026 Рупавати • «Пища с любовью». Все права защищены. Дизайн & Разработка сайта для сообщества.</p>
+    </div>
+  </footer>
+
+  <!-- НИЖНЯЯ ПЛАВАЮЩАЯ ПАНЕЛЬ ДЛЯ МОБИЛЬНЫХ И ПЛАНШЕТОВ -->
+  <div class="mobile-sticky-bar">
+    <div class="bar-content">
+      <a href="#order" class="btn btn-primary btn-sticky-order">
+        <i class="fa-solid fa-book-open"></i> Получить книгу
+      </a>
+      <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" class="btn-sticky-tg" title="Telegram-канал">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО: ПРЕДПРОСМОТР КНИГИ (SNEAK-PEEK) С КНОПКАМИ И СТРЕЛКАМИ -->
+  <div id="preview-modal" class="modal">
+    <div class="modal-content modal-book-preview">
+      <button class="modal-close" onclick="closePreviewModal()" aria-label="Закрыть">&times;</button>
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-book-open"></i> Фрагменты книги «Пища с любовью»</h3>
+        <p>Листайте кнопками, свайпом или стрелками клавиатуры &larr; / &rarr;</p>
+      </div>
+      <div class="modal-body preview-carousel">
+        <div class="preview-page-display">
+          <button class="preview-nav-btn preview-prev" onclick="prevPreviewPage()" aria-label="Назад"><i class="fa-solid fa-chevron-left"></i></button>
+          <img id="preview-current-img" src="assets/images/book_cover.jpg" alt="Фрагмент книги">
+          <button class="preview-nav-btn preview-next" onclick="nextPreviewPage()" aria-label="Вперед"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="preview-caption" id="preview-caption">Обложка книги • «Пища с любовью от Рупавати»</div>
+        </div>
+        <div class="preview-thumbs">
+          <button class="thumb-btn active" onclick="setPreviewImageByIndex(0)">Обложка</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(1)">Стр. 20 (Каша)</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(2)">Стр. 70 (Суп Дал)</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(3)">Стр. 80 (Кутабы)</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(4)">Стр. 93 (Манго-карри)</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(5)">Стр. 100 (Чизкейк)</button>
+          <button class="thumb-btn" onclick="setPreviewImageByIndex(6)">Стр. 114 (Автор)</button>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <a href="#order" class="btn btn-primary" onclick="closePreviewModal()">Получить полную версию (114 страниц)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО: ЗАГЛУШКА СЕРВИСА ЭКОСИСТЕМЫ -->
+  <div id="ecosystem-modal" class="modal">
+    <div class="modal-content modal-service">
+      <button class="modal-close" onclick="closeEcosystemModal()" aria-label="Закрыть">&times;</button>
+      <div class="modal-header">
+        <span class="badge-accent"><i class="fa-solid fa-compass"></i> В разработке</span>
+        <h3 id="eco-service-title">Сервис экосистемы</h3>
+      </div>
+      <div class="modal-body">
+        <p id="eco-service-desc">Описание сервиса</p>
+        <div class="eco-form-box">
+          <h5>Хотите первыми узнать об открытии этого направления?</h5>
+          <p>Оставьте свои контакты, и мы пришлем приглашение на специальных условиях для читателей книги.</p>
+          <form onsubmit="handleWaitlist(event)">
+            <input type="text" placeholder="Ваше имя" required class="form-input">
+            <input type="text" placeholder="Telegram @username или телефон" required class="form-input">
+            <button type="submit" class="btn btn-primary btn-block">Записаться в лист ожидания</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО: ОПЛАТА И РЕКВИЗИТЫ РУПАВАТИ -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content modal-order">
+      <button class="modal-close" onclick="closeOrderModal()" aria-label="Закрыть">&times;</button>
+      <div class="modal-header">
+        <h3 id="order-modal-title">Оплата и получение книги</h3>
+        <p>Реквизиты автора для оплат и донатов. Намаскар! 🙏</p>
+      </div>
+      <div class="modal-body">
+        
+        <!-- РЕКВИЗИТЫ С БЫСТРЫМ КОПИРОВАНИЕМ -->
+        <div class="requisites-box">
+          <!-- Вкладки способов -->
+          <div class="requisites-tabs">
+            <button class="req-tab-btn active" onclick="switchReqTab('privat')" id="tab-privat-btn">
+              <i class="fa-solid fa-building-columns"></i> Украина (Приват)
+            </button>
+            <button class="req-tab-btn" onclick="switchReqTab('paypal')" id="tab-paypal-btn">
+              <i class="fa-brands fa-paypal"></i> Европа / Мир (PayPal)
+            </button>
+          </div>
+
+          <!-- ПриватБанк -->
+          <div class="req-content-pane active" id="pane-privat">
+            <div class="req-card">
+              <div class="req-card-label">Карта ПриватБанк (Украина)</div>
+              <div class="req-card-num" id="card-privat">5363 5421 1167 4579</div>
+              <div class="req-card-holder">Получатель: <strong>Горб Юлия</strong></div>
+              <button class="btn btn-secondary btn-sm mt-10" onclick="copyToClipboard('5363542111674579', 'Номер карты ПриватБанка скопирован!')">
+                <i class="fa-regular fa-copy"></i> Скопировать номер карты
+              </button>
+            </div>
+          </div>
+
+          <!-- PayPal -->
+          <div class="req-content-pane" id="pane-paypal">
+            <div class="req-card">
+              <div class="req-card-label">PayPal (Европа и весь мир)</div>
+              <div class="req-card-num" id="paypal-email">yuli.gorb@gmail.com</div>
+              <div class="req-card-holder">Получатель: <strong>Юлия Горб</strong></div>
+              <div class="flex-gap-10 mt-10">
+                <button class="btn btn-secondary btn-sm" onclick="copyToClipboard('yuli.gorb@gmail.com', 'PayPal email скопирован!')">
+                  <i class="fa-regular fa-copy"></i> Скопировать email
+                </button>
+                <a href="https://www.paypal.com" target="_blank" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть PayPal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Форма для получения ссылки на PDF -->
+        <form onsubmit="handleOrderSubmit(event)" class="mt-20">
+          <div class="form-group">
+            <label>Выбранный вариант:</label>
+            <input type="text" id="order-plan-input" readonly class="form-input readonly-input">
+          </div>
+          <div class="form-group">
+            <label>Куда отправить PDF-книгу (114 стр.) после перевода:</label>
+            <input type="email" placeholder="Ваш E-mail (обязательно)" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Ваш Telegram (для быстрой связи и дублирования):</label>
+            <input type="text" placeholder="@username" class="form-input">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Я оплатил / подтвердить отправку книги
+          </button>
+          <p class="form-disclaimer text-center">
+            <i class="fa-solid fa-shield-heart"></i> От сердца к сердцу. Книга будет отправлена вам сразу после перевода.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/script.js"></script>
+</body>
+</html>

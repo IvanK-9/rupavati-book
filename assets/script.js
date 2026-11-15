@@ -1,0 +1,445 @@
+/**
+ * Пища с любовью от Рупавати • JavaScript
+ * Интерактивность, тест на доши, модальные окна, фильтры рецептов, переключатель языка
+ * Оптимизация под клавиатуру планшета (Arrow keys, 1/2/3, Enter, Esc) и тач-устройства
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initLanguageSwitcher();
+  initRecipeFilters();
+  initMobileMenu();
+  initKeyboardSupport();
+  initQuizTouchSelection();
+});
+
+/* ========================================================
+   1. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА (RU / EN)
+   ======================================================== */
+function initLanguageSwitcher() {
+  const langButtons = document.querySelectorAll('.lang-btn');
+  
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      langButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const lang = btn.getAttribute('data-lang');
+      applyLanguage(lang);
+    });
+  });
+}
+
+function applyLanguage(lang) {
+  const translatableElements = document.querySelectorAll('[data-ru]');
+  translatableElements.forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      el.innerHTML = text;
+    }
+  });
+
+  document.documentElement.lang = lang;
+}
+
+/* ========================================================
+   2. ФИЛЬТРЫ РЕЦЕПТОВ
+   ======================================================== */
+function initRecipeFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const recipeCards = document.querySelectorAll('.recipe-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      recipeCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ========================================================
+   3. ИНТЕРАКТИВНЫЙ ТЕСТ НА ДОШИ (QUIZ)
+   ======================================================== */
+let currentQuizStep = 1;
+
+function initQuizTouchSelection() {
+  // Подсветка выбранной карточки для удобства тача на планшетах и смартфонах
+  document.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const parent = opt.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+    });
+  });
+}
+
+function nextQuizStep(step) {
+  const activeStep = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+  const selected = activeStep.querySelector('input[type="radio"]:checked');
+  
+  if (!selected) {
+    alert('Пожалуйста, выберите один из вариантов ответа (или нажмите клавишу 1, 2 или 3)');
+    return;
+  }
+
+  activeStep.classList.remove('active');
+  currentQuizStep = step;
+  const nextStepEl = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+  if (nextStepEl) {
+    nextStepEl.classList.add('active');
+  }
+}
+
+function prevQuizStep(step) {
+  const activeStep = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+  activeStep.classList.remove('active');
+  currentQuizStep = step;
+  const prevStepEl = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+  if (prevStepEl) {
+    prevStepEl.classList.add('active');
+  }
+}
+
+function calculateQuizResult() {
+  const activeStep = document.querySelector(`.quiz-step[data-step="3"]`);
+  const selected = activeStep.querySelector('input[type="radio"]:checked');
+  if (!selected) {
+    alert('Пожалуйста, ответьте на 3-й вопрос (или нажмите клавишу 1, 2 или 3)');
+    return;
+  }
+
+  const q1 = document.querySelector('input[name="q1"]:checked')?.value || 'vata';
+  const q2 = document.querySelector('input[name="q2"]:checked')?.value || 'vata';
+  const q3 = document.querySelector('input[name="q3"]:checked')?.value || 'vata';
+
+  const counts = { vata: 0, pitta: 0, kapha: 0 };
+  counts[q1]++;
+  counts[q2]++;
+  counts[q3]++;
+
+  let dominant = 'vata';
+  if (counts.pitta > counts.vata && counts.pitta >= counts.kapha) dominant = 'pitta';
+  else if (counts.kapha > counts.vata && counts.kapha > counts.pitta) dominant = 'kapha';
+
+  displayQuizResult(dominant);
+}
+
+function displayQuizResult(dosha) {
+  document.querySelectorAll('.quiz-step').forEach(step => step.classList.remove('active'));
+  
+  const resultBox = document.getElementById('quiz-result');
+  const resultTitle = document.getElementById('result-title');
+  const resultDesc = document.getElementById('result-desc');
+  const dishesGrid = document.getElementById('result-dishes');
+
+  const doshaData = {
+    vata: {
+      title: 'Ваша ведущая конституция: Вата (Воздух и Эфир)',
+      desc: 'Вы человек чуткий, творческий и переменчивый. При дисбалансе появляется беспокойство ума, сухость и упадок сил. Вам необходимо регулярное питание, тепло, маслянистость и заземляющие блюда. Избегайте холодной сухомятки и сырых салатов зимой.',
+      dishes: [
+        { name: 'Золотой суп Дал', page: 'Стр. 70', note: 'Маш, куркума и масло Гхи' },
+        { name: 'Пшённая каша с курагой', page: 'Стр. 20', note: 'Теплое заземление на завтрак' },
+        { name: 'Йоговское молоко', page: 'Стр. 106', note: 'Мускатный орех и кардамон на ночь' }
+      ]
+    },
+    pitta: {
+      title: 'Ваша ведущая конституция: Питта (Огонь и Вода)',
+      desc: 'Вы обладаете сильной волей, ясным умом и высоким метаболизмом. При дисбалансе огонь перегревает тело, вызывая раздражительность и изжогу. Вам подходят охлаждающие, сочные блюда, сладкие и вяжущие вкусы. Избегайте чрезмерно острой, соленой и уксусной пищи.',
+      dishes: [
+        { name: 'Крем-суп из брокколи', page: 'Стр. 73', note: 'Шелковистая текстура, охлаждение огня' },
+        { name: 'Чиа-пудинг на кокосовом молоке', page: 'Стр. 102', note: 'Нежный саттвичный десерт' },
+        { name: 'Салат «Свежесть»', page: 'Стр. 54', note: 'Сочные овощи и мята' }
+      ]
+    },
+    kapha: {
+      title: 'Ваша ведущая конституция: Капха (Земля и Вода)',
+      desc: 'Вы спокойны, верны, обладаете крепким здоровьем и выносливостью. При дисбалансе наступает апатия, застой жидкости и тяжесть. Вам показана теплая, легкая пища, острые и горькие специи (имбирь, черный перец, пажитник) для стимуляции метаболизма.',
+      dishes: [
+        { name: 'Нежное Манго-Карри', page: 'Стр. 93', note: 'Пряный имбирь стимулирует Агни' },
+        { name: 'Котлеты из маша и чечевицы', page: 'Стр. 87', note: 'Белок без утяжеления ЖКТ' },
+        { name: 'Мятно-имбирный чай', page: 'Стр. 113', note: 'Очищение и разгон обмена веществ' }
+      ]
+    }
+  };
+
+  const current = doshaData[dosha];
+  resultTitle.textContent = current.title;
+  resultDesc.textContent = current.desc;
+
+  dishesGrid.innerHTML = current.dishes.map(d => `
+    <div class="result-dish-card">
+      <strong>${d.name}</strong>
+      <span>${d.page} • ${d.note}</span>
+    </div>
+  `).join('');
+
+  resultBox.style.display = 'block';
+}
+
+function resetQuiz() {
+  document.getElementById('quiz-result').style.display = 'none';
+  document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+  document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  currentQuizStep = 1;
+  document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+}
+
+/* ========================================================
+   4. МОДАЛЬНЫЕ ОКНА И КАРУСЕЛЬ КНИГИ
+   ======================================================== */
+const previewBookPages = [
+  { src: 'assets/images/book_cover.jpg', caption: 'Обложка книги • «Пища с любовью от Рупавати»' },
+  { src: 'assets/images/dish_page_20.jpg', caption: 'Стр. 20 • Завтраки: Пшённая каша с курагой' },
+  { src: 'assets/images/dish_page_70.jpg', caption: 'Стр. 70 • Супы: Традиционный золотой суп Дал' },
+  { src: 'assets/images/dish_page_80.jpg', caption: 'Стр. 80 • Основные блюда: Кутабы со свежей зеленью и сыром' },
+  { src: 'assets/images/dish_page_93.jpg', caption: 'Стр. 93 • Основные блюда: Авторское Манго-Карри' },
+  { src: 'assets/images/dish_page_100.jpg', caption: 'Стр. 100 • Десерты: Чизкейк с черносливом без яиц' },
+  { src: 'assets/images/author_rupavati.jpg', caption: 'Стр. 114 • Благодарность от автора Рупавати' }
+];
+
+let currentPreviewIndex = 0;
+
+function openPreviewModal() {
+  document.getElementById('preview-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePreviewModal() {
+  document.getElementById('preview-modal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function setPreviewImageByIndex(index) {
+  if (index < 0) index = previewBookPages.length - 1;
+  if (index >= previewBookPages.length) index = 0;
+  
+  currentPreviewIndex = index;
+  const item = previewBookPages[currentPreviewIndex];
+  
+  document.getElementById('preview-current-img').src = item.src;
+  document.getElementById('preview-caption').textContent = item.caption;
+
+  const thumbs = document.querySelectorAll('.thumb-btn');
+  thumbs.forEach((btn, idx) => {
+    btn.classList.toggle('active', idx === currentPreviewIndex);
+  });
+}
+
+function nextPreviewPage() {
+  setPreviewImageByIndex(currentPreviewIndex + 1);
+}
+
+function prevPreviewPage() {
+  setPreviewImageByIndex(currentPreviewIndex - 1);
+}
+
+function setPreviewImage(src, caption) {
+  const foundIndex = previewBookPages.findIndex(p => p.src === src);
+  if (foundIndex !== -1) {
+    setPreviewImageByIndex(foundIndex);
+  } else {
+    document.getElementById('preview-current-img').src = src;
+    document.getElementById('preview-caption').textContent = caption;
+  }
+}
+
+// Заглушка сервисов экосистемы
+function openEcosystemModal(title, desc) {
+  document.getElementById('eco-service-title').textContent = title;
+  document.getElementById('eco-service-desc').textContent = desc;
+  document.getElementById('ecosystem-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEcosystemModal() {
+  document.getElementById('ecosystem-modal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Оформление заказа
+function openOrderModal(planName) {
+  document.getElementById('order-plan-input').value = planName;
+  document.getElementById('order-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOrderModal() {
+  document.getElementById('order-modal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Закрытие при клике по фону
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal')) {
+    closePreviewModal();
+    closeEcosystemModal();
+    closeOrderModal();
+  }
+});
+
+/* ========================================================
+   5. ПОДДЕРЖКА КЛАВИАТУРЫ (ПЛАНШЕТ С КЛАВИАТУРОЙ / ДЕСКТОП)
+   ======================================================== */
+function initKeyboardSupport() {
+  window.addEventListener('keydown', (e) => {
+    // 1. Закрытие окон по Esc
+    if (e.key === 'Escape') {
+      closePreviewModal();
+      closeEcosystemModal();
+      closeOrderModal();
+    }
+
+    // 2. Листание страниц книги стрелками влево / вправо
+    const previewModal = document.getElementById('preview-modal');
+    if (previewModal && previewModal.classList.contains('active')) {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+        nextPreviewPage();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevPreviewPage();
+      }
+    }
+
+    // 3. Выбор ответов в тесте клавишами 1, 2, 3 и подтверждение Enter
+    const activeQuizStep = document.querySelector('.quiz-step.active');
+    if (activeQuizStep && !document.querySelector('.modal.active')) {
+      const options = activeQuizStep.querySelectorAll('.quiz-option');
+      if (e.key === '1' && options[0]) {
+        options[0].querySelector('input').checked = true;
+        options[0].click();
+      } else if (e.key === '2' && options[1]) {
+        options[1].querySelector('input').checked = true;
+        options[1].click();
+      } else if (e.key === '3' && options[2]) {
+        options[2].querySelector('input').checked = true;
+        options[2].click();
+      } else if (e.key === 'Enter') {
+        const nextBtn = activeQuizStep.querySelector('.next-btn');
+        if (nextBtn) {
+          nextBtn.click();
+        } else {
+          const submitBtn = activeQuizStep.querySelector('button[onclick*="calculateQuizResult"]');
+          if (submitBtn) submitBtn.click();
+        }
+      }
+    }
+  });
+}
+
+/* ========================================================
+   6. ОБРАБОТЧИКИ ФОРМ (ДЕМО / СБОР КОНТАКТОВ)
+   ======================================================== */
+function handleLeadMagnet(e) {
+  e.preventDefault();
+  alert('Благодарим! Ссылка на мини-гид «Аюрведическая аптечка специй + 3 рецепта» отправлена. Добро пожаловать в мир чистой пищи!');
+  e.target.reset();
+}
+
+function handleWaitlist(e) {
+  e.preventDefault();
+  alert('Спасибо! Вы успешно внесены в лист ожидания. Рупавати лично оповестит вас о старте на специальных условиях.');
+  closeEcosystemModal();
+  e.target.reset();
+}
+
+function handleOrderSubmit(e) {
+  e.preventDefault();
+  alert('Демо-версия: Заказ зафиксирован! В рабочей версии здесь откроется защищенный платежный шлюз (PayPal / ПриватБанк / Monobank / Stripe для English Edition), и PDF сразу придет на почту.');
+  closeOrderModal();
+  e.target.reset();
+}
+
+/* ========================================================
+   7. МОБИЛЬНОЕ МЕНЮ
+   ======================================================== */
+function initMobileMenu() {
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.style.display === 'flex';
+      if (isOpen) {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.background = '#FAF7F2';
+        navLinks.style.padding = '24px';
+        navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
+        navLinks.style.gap = '16px';
+        navLinks.style.borderBottom = '1px solid #E8E0D5';
+      }
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          navLinks.style.display = 'none';
+        }
+      });
+    });
+  }
+}
+
+
+/* ========================================================
+   8. ПЕРЕКЛЮЧЕНИЕ РЕКВИЗИТОВ И КОПИРОВАНИЕ (ПРИВАТ / PAYPAL)
+   ======================================================== */
+function switchReqTab(tab) {
+  const privatBtn = document.getElementById('tab-privat-btn');
+  const paypalBtn = document.getElementById('tab-paypal-btn');
+  const privatPane = document.getElementById('pane-privat');
+  const paypalPane = document.getElementById('pane-paypal');
+
+  if (tab === 'privat') {
+    privatBtn.classList.add('active');
+    paypalBtn.classList.remove('active');
+    privatPane.classList.add('active');
+    paypalPane.classList.remove('active');
+  } else {
+    privatBtn.classList.remove('active');
+    paypalBtn.classList.add('active');
+    privatPane.classList.remove('active');
+    paypalPane.classList.add('active');
+  }
+}
+
+function copyToClipboard(text, msg) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert(msg);
+  }).catch(() => {
+    // Fallback
+    const input = document.createElement('textarea');
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    alert(msg);
+  });
+}
+
+// Обновленный openOrderModal с поддержкой типа
+const originalOpenOrderModal = openOrderModal;
+openOrderModal = function(planName, type) {
+  originalOpenOrderModal(planName);
+  if (type === 'eu') {
+    switchReqTab('paypal');
+  } else {
+    switchReqTab('privat');
+  }
+};
