@@ -71,10 +71,10 @@ G:\11 Rupavati site\
 Сайт полностью автономен и не требует серверов или баз данных на старте. Его можно опубликовать бесплатно:
 
 1. **GitHub Pages:**
-   - Создать бесплатный репозиторий `rupavati-book` на GitHub.
+   - Создать бесплатный репозиторий `rupavati-preview-7x9k2m` на GitHub.
    - Загрузить файлы проекта.
    - В настройках репозитория включить *Settings -> Pages -> Deploy from main branch*.
-   - Сайт будет доступен по адресу `username.github.io/rupavati-book` или на персональном домене `rupavati.ru`!
+   - Сайт будет доступен по адресу `username.github.io/rupavati-preview-7x9k2m` или на персональном домене `rupavati.ru`!
 
 2. **Cloudflare Pages / Vercel / Netlify:**
    - Перетащить папку с сайтом мышкой в окно сервиса (Drag & Drop).
