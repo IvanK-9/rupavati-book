@@ -12,6 +12,7 @@
   --color-sage-bg: #EEF3ED;
 
   --color-saffron: #D0831F;
+  --color-saffron-text: #914700; /* WCAG AA 6.3:1 contrast on cream/white */
   --color-saffron-light: #F4A43D;
   --color-saffron-soft: #FDF4E7;
 
@@ -21,8 +22,8 @@
   --color-border: #E8E0D5;
 
   --color-text-main: #2A2420;
-  --color-text-muted: #665D56;
-  --color-text-light: #8E8379;
+  --color-text-muted: #524B45; /* Darkened for 8.0:1 contrast (WCAG AAA) */
+  --color-text-light: #5C544D; /* Darkened for 6.8:1 contrast (WCAG AA) */
 
   --color-tg: #229ED9;
   --color-tg-dark: #1A7FB0;
@@ -155,15 +156,19 @@ img {
 }
 
 .btn-secondary {
-  background-color: var(--color-saffron-soft);
-  color: var(--color-saffron);
-  border-color: rgba(208, 131, 31, 0.3);
+  background-color: #FFFFFF;
+  color: var(--color-saffron-text);
+  border: 2px solid #B86208;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(184, 98, 8, 0.12);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-saffron);
+  background-color: #B86208;
   color: #FFFFFF;
+  border-color: #B86208;
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 98, 8, 0.25);
 }
 
 .btn-outline {
@@ -266,7 +271,7 @@ img {
 
 .logo-sanskrit {
   font-size: 28px;
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   font-weight: 700;
   line-height: 1;
 }
@@ -284,7 +289,7 @@ img {
   display: block;
   font-size: 11px;
   letter-spacing: 0.5px;
-  color: var(--color-text-light);
+  color: var(--color-text-muted); font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -307,8 +312,8 @@ img {
 }
 
 .nav-quiz-link {
-  color: var(--color-saffron) !important;
-  font-weight: 600 !important;
+  color: var(--color-saffron-text) !important;
+  font-weight: 700 !important;
 }
 
 .badge-link {
@@ -319,7 +324,7 @@ img {
 
 .tag-soon {
   background-color: var(--color-saffron-soft);
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   font-size: 10px;
   font-weight: 700;
   padding: 2px 6px;
@@ -408,18 +413,23 @@ img {
 
 .stat-num {
   display: block;
-  font-family: var(--font-serif);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--color-saffron);
-  line-height: 1;
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums proportional-nums;
+  -moz-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--color-saffron-text);
+  line-height: 1.1;
   margin-bottom: 4px;
+  letter-spacing: -0.5px;
 }
 
 .stat-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-main);
   text-transform: lowercase;
 }
 
@@ -566,7 +576,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   margin-bottom: 10px;
 }
 
@@ -725,7 +735,7 @@ img {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
@@ -803,7 +813,7 @@ img {
   align-items: center;
   gap: 8px;
   background: var(--color-saffron-soft);
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   padding: 6px 14px;
   border-radius: var(--radius-full);
   font-size: 13px;
@@ -1759,7 +1769,7 @@ img {
 .badge-accent {
   display: inline-block;
   background: var(--color-saffron-soft);
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
@@ -2109,7 +2119,7 @@ img {
 
 .logo-sanskrit {
   font-size: 26px;
-  color: var(--color-saffron);
+  color: var(--color-saffron-text);
   font-weight: 700;
   line-height: 1;
 }
@@ -2128,7 +2138,7 @@ img {
   display: block;
   font-size: 11px;
   letter-spacing: 0.5px;
-  color: var(--color-text-light);
+  color: var(--color-text-muted); font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -2153,7 +2163,7 @@ img {
 }
 
 .nav-quiz-link {
-  color: var(--color-saffron) !important;
+  color: var(--color-saffron-text) !important;
   font-weight: 700 !important;
 }
 
