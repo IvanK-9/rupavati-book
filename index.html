@@ -757,8 +757,9 @@
         </div>
         <p class="footer-motto">Готовьте с открытым сердцем. Пусть каждое блюдо приносит радость, здоровье и мир в ваш дом. Намаскар 🙏</p>
         <div class="footer-socials">
-          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-          <a href="mailto:yuli.gorb@gmail.com" title="Email / PayPal"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" title="Telegram-канал"><i class="fa-brands fa-telegram"></i></a>
+          <a href="javascript:void(0)" onclick="openSecureEmail()" title="Написать автору (Email)"><i class="fa-solid fa-envelope"></i></a>
+          <a href="javascript:void(0)" onclick="openSecurePayPal()" title="Поддержать через PayPal"><i class="fa-brands fa-paypal"></i></a>
         </div>
       </div>
 
@@ -774,11 +775,11 @@
       </div>
 
       <div class="footer-links">
-        <h5>Реквизиты</h5>
+        <h5>Реквизиты и оплата</h5>
         <ul>
-          <li><a href="#order">PayPal: yuli.gorb@gmail.com</a></li>
-          <li><a href="#order">ПриватБанк (Украина)</a></li>
-          <li><a href="#telegram-bridge">Telegram-сообщество</a></li>
+          <li><a href="#order" onclick="openOrderModal('Европа / Мир (PayPal)', 'eu')">PayPal (Европа и весь мир)</a></li>
+          <li><a href="#order" onclick="openOrderModal('Базовый комплект (ПриватБанк)', 'ua')">ПриватБанк (Украина)</a></li>
+          <li><a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank">Telegram-сообщество</a></li>
         </ul>
       </div>
 
@@ -883,31 +884,39 @@
             </button>
           </div>
 
-          <!-- ПриватБанк -->
+          <!-- ПриватБанк (Защищено от спам-ботов) -->
           <div class="req-content-pane active" id="pane-privat">
             <div class="req-card">
               <div class="req-card-label">Карта ПриватБанк (Украина)</div>
-              <div class="req-card-num" id="card-privat">5363 5421 1167 4579</div>
+              <div class="req-card-num" id="card-privat">5363 •••• •••• 4579</div>
               <div class="req-card-holder">Получатель: <strong>Горб Юлия</strong></div>
-              <button class="btn btn-secondary btn-sm mt-10" onclick="copyToClipboard('5363542111674579', 'Номер карты ПриватБанка скопирован!')">
-                <i class="fa-regular fa-copy"></i> Скопировать номер карты
-              </button>
+              <div class="flex-gap-10 mt-10" style="flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="copySecureData('card')">
+                  <i class="fa-regular fa-copy"></i> Скопировать номер
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="btn-reveal-card" onclick="revealSecureData('card')">
+                  <i class="fa-regular fa-eye"></i> Показать номер
+                </button>
+              </div>
             </div>
           </div>
 
-          <!-- PayPal -->
+          <!-- PayPal (Защищено от спам-ботов) -->
           <div class="req-content-pane" id="pane-paypal">
             <div class="req-card">
               <div class="req-card-label">PayPal (Европа и весь мир)</div>
-              <div class="req-card-num" id="paypal-email">yuli.gorb@gmail.com</div>
+              <div class="req-card-num" id="paypal-email">yu••••••@gmail.com</div>
               <div class="req-card-holder">Получатель: <strong>Юлия Горб</strong></div>
-              <div class="flex-gap-10 mt-10">
-                <button class="btn btn-secondary btn-sm" onclick="copyToClipboard('yuli.gorb@gmail.com', 'PayPal email скопирован!')">
+              <div class="flex-gap-10 mt-10" style="flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="copySecureData('paypal')">
                   <i class="fa-regular fa-copy"></i> Скопировать email
                 </button>
-                <a href="https://www.paypal.com" target="_blank" class="btn btn-outline btn-sm">
+                <button type="button" class="btn btn-outline btn-sm" id="btn-reveal-paypal" onclick="revealSecureData('paypal')">
+                  <i class="fa-regular fa-eye"></i> Показать email
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" onclick="openSecurePayPal()">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть PayPal
-                </a>
+                </button>
               </div>
             </div>
           </div>

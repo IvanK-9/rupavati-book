@@ -443,3 +443,73 @@ openOrderModal = function(planName, type) {
     switchReqTab('privat');
   }
 };
+
+// ==========================================
+// Защита реквизитов от спам-ботов и парсеров
+// Реквизиты собираются динамически по клику пользователя
+// ==========================================
+const _secVault = {
+  // Номер карты в разделенных фрагментах
+  c: ['5363', '5421', '1167', '4579'],
+  // Email в разделенных фрагментах
+  e: ['yuli', 'gorb', 'gmail', 'com']
+};
+
+function getSecureCard(formatted = false) {
+  return formatted ? _secVault.c.join(' ') : _secVault.c.join('');
+}
+
+function getSecureEmail() {
+  return _secVault.e[0] + '.' + _secVault.e[1] + '@' + _secVault.e[2] + '.' + _secVault.e[3];
+}
+
+function copySecureData(type) {
+  if (type === 'card') {
+    const card = getSecureCard(false);
+    copyToClipboard(card, 'Номер карты ПриватБанка скопирован!');
+  } else if (type === 'paypal') {
+    const email = getSecureEmail();
+    copyToClipboard(email, 'PayPal email скопирован!');
+  }
+}
+
+function revealSecureData(type) {
+  if (type === 'card') {
+    const el = document.getElementById('card-privat');
+    const btn = document.getElementById('btn-reveal-card');
+    if (el) {
+      el.textContent = getSecureCard(true);
+      el.style.letterSpacing = '1px';
+    }
+    if (btn) {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Номер открыт';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.style.cursor = 'default';
+    }
+  } else if (type === 'paypal') {
+    const el = document.getElementById('paypal-email');
+    const btn = document.getElementById('btn-reveal-paypal');
+    if (el) {
+      el.textContent = getSecureEmail();
+      el.style.letterSpacing = '0.5px';
+    }
+    if (btn) {
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Email открыт';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.style.cursor = 'default';
+    }
+  }
+}
+
+function openSecurePayPal() {
+  const email = getSecureEmail();
+  copyToClipboard(email, 'PayPal email скопирован в буфер обмена! Переходим на сайт PayPal...');
+  window.open('https://www.paypal.com', '_blank');
+}
+
+function openSecureEmail() {
+  const email = getSecureEmail();
+  window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Книга «Пища с любовью»');
+}
