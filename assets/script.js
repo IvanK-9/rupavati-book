@@ -598,11 +598,74 @@ function openSecureEmail() {
 }
 
 // ==========================================
-// 3D-FLIP ПАСХАЛКА ДЛЯ КАРТОЧКИ АВТОРА
+// 3D-FLIP ПАСХАЛКА ДЛЯ КАРТОЧКИ АВТОРА (РАНДОМНЫЕ ФОТО)
 // ==========================================
+const backstageStories = [
+  {
+    img: 'assets/images/backstage_stockholm.jpg',
+    tag: '<i class="fa-solid fa-compass"></i> Вдохновение в пути',
+    title: 'Еда объединяет сердца',
+    quote: '«Вдохновляемся старинными улочками и собираем лучшие вкусы и специи мира для книги!»',
+    sub: 'Рупавати & Иван • Gamla Stan 🏛️'
+  },
+  {
+    img: 'assets/images/backstage_3d.jpg',
+    tag: '<i class="fa-solid fa-glasses"></i> 3D-Контроль качества',
+    title: 'Кулинарный спецназ',
+    quote: '«Смотрим на Аюрведу и специи в новом измерении! Все рецепты протестированы и одобрены на 100%.»',
+    sub: 'Рупавати & Иван • Новое измерение вкуса 😎'
+  },
+  {
+    img: 'assets/images/author_backstage.jpg',
+    tag: '<i class="fa-solid fa-heart"></i> Команда с любовью',
+    title: 'Главный дегустатор',
+    quote: '«За каждым великим поваром стоит тот, кто с любовью моет кастрюли, дегустирует рецепты и верстает сайты!»',
+    sub: 'Рупавати & Иван • Намаскар 🙏'
+  }
+];
+
+// Предзагрузка фото бэкстейджа для мгновенного отображения без рывков
+if (typeof window !== 'undefined') {
+  backstageStories.forEach(s => {
+    const pre = new Image();
+    pre.src = s.img;
+  });
+}
+
+let lastBackstageIdx = -1;
+
+function pickRandomBackstage() {
+  let newIdx;
+  if (backstageStories.length <= 1) return backstageStories[0];
+  do {
+    newIdx = Math.floor(Math.random() * backstageStories.length);
+  } while (newIdx === lastBackstageIdx);
+  lastBackstageIdx = newIdx;
+  return backstageStories[newIdx];
+}
+
+function updateBackstageContent() {
+  const story = pickRandomBackstage();
+  const imgEl = document.getElementById('backstage-img');
+  const tagEl = document.getElementById('backstage-tag');
+  const titleEl = document.getElementById('backstage-title');
+  const quoteEl = document.getElementById('backstage-quote');
+  const subEl = document.getElementById('backstage-sub');
+
+  if (imgEl) imgEl.src = story.img;
+  if (tagEl) tagEl.innerHTML = story.tag;
+  if (titleEl) titleEl.textContent = story.title;
+  if (quoteEl) quoteEl.textContent = story.quote;
+  if (subEl) subEl.textContent = story.sub;
+}
+
 function toggleAuthorFlip() {
   const card = document.getElementById('author-flip-card');
   if (card) {
+    const isFlippingToBack = !card.classList.contains('flipped');
+    if (isFlippingToBack) {
+      updateBackstageContent();
+    }
     card.classList.toggle('flipped');
   }
 }
