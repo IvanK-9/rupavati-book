@@ -397,52 +397,128 @@ function initMobileMenu() {
 
 
 /* ========================================================
-   8. ПЕРЕКЛЮЧЕНИЕ РЕКВИЗИТОВ И КОПИРОВАНИЕ (ПРИВАТ / PAYPAL)
+   8. ПЕРЕКЛЮЧЕНИЕ СПОСОБОВ ОПЛАТЫ И ДАНЫ (GUMROAD / ПРИВАТ / PAYPAL)
    ======================================================== */
 function switchReqTab(tab) {
+  const instantBtn = document.getElementById('tab-instant-btn');
   const privatBtn = document.getElementById('tab-privat-btn');
   const paypalBtn = document.getElementById('tab-paypal-btn');
+
+  const instantPane = document.getElementById('pane-instant');
   const privatPane = document.getElementById('pane-privat');
   const paypalPane = document.getElementById('pane-paypal');
+  const manualSection = document.getElementById('manual-verification-section');
 
-  if (tab === 'privat') {
-    privatBtn.classList.add('active');
-    paypalBtn.classList.remove('active');
-    privatPane.classList.add('active');
-    paypalPane.classList.remove('active');
-  } else {
-    privatBtn.classList.remove('active');
-    paypalBtn.classList.add('active');
-    privatPane.classList.remove('active');
-    paypalPane.classList.add('active');
+  // Сброс классов активных кнопок и панелей
+  [instantBtn, privatBtn, paypalBtn].forEach(b => b && b.classList.remove('active'));
+  [instantPane, privatPane, paypalPane].forEach(p => p && p.classList.remove('active'));
+
+  if (tab === 'instant') {
+    if (instantBtn) instantBtn.classList.add('active');
+    if (instantPane) instantPane.classList.add('active');
+    // Для авто-выдачи ручная форма подтверждения не нужна
+    if (manualSection) manualSection.style.display = 'none';
+  } else if (tab === 'privat') {
+    if (privatBtn) privatBtn.classList.add('active');
+    if (privatPane) privatPane.classList.add('active');
+    // Для ручного перевода показываем форму подтверждения/чек
+    if (manualSection) manualSection.style.display = 'block';
+  } else if (tab === 'paypal') {
+    if (paypalBtn) paypalBtn.classList.add('active');
+    if (paypalPane) paypalPane.classList.add('active');
+    // Для ручного перевода показываем форму подтверждения/чек
+    if (manualSection) manualSection.style.display = 'block';
   }
 }
 
-function copyToClipboard(text, msg) {
-  navigator.clipboard.writeText(text).then(() => {
-    alert(msg);
-  }).catch(() => {
-    // Fallback
-    const input = document.createElement('textarea');
-    input.value = text;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand('copy');
-    document.body.removeChild(input);
-    alert(msg);
+// Калькулятор Даны и пересчет ссылки PayPal.me
+function setDonationAmount(amount) {
+  const input = document.getElementById('paypal-amount-input');
+  if (input) input.value = amount;
+  handleDonationInput(amount);
+
+  // Обновление подсветки чипов
+  const chips = document.querySelectorAll('.donation-chip');
+  chips.forEach(chip => {
+    if (parseInt(chip.textContent) === parseInt(amount)) {
+      chip.classList.add('active');
+    } else {
+      chip.classList.remove('active');
+    }
   });
 }
 
-// Обновленный openOrderModal с поддержкой типа
-const originalOpenOrderModal = openOrderModal;
+function handleDonationInput(val) {
+  const amount = parseInt(val) || 15;
+  const sumDisplay = document.getElementById('paypal-btn-sum');
+  const btn = document.getElementById('paypal-me-btn');
+
+  if (sumDisplay) sumDisplay.textContent = amount + ' €';
+  if (btn) {
+    btn.href = 'https://www.paypal.com/paypalme/yuligorb/' + amount + 'EUR';
+  }
+}
+
+// Обработка отправки данных на сверку
+function handleOrderVerification(e) {
+  e.preventDefault();
+  const email = document.getElementById('order-email').value;
+  const sender = document.getElementById('order-sender').value;
+  const time = document.getElementById('order-time').value;
+
+  alert('Благодарим! Данные приняты на сверку:\n' +
+        '• Email для книги: ' + email + '\n' +
+        '• Отправитель: ' + sender + '\n' +
+        (time ? '• Время/сумма: ' + time + '\n' : '') +
+        '\nРупавати сверит поступление по банковской выписке и отправит PDF-книгу на ваш Email в течение 1–3 часов.');
+  closeOrderModal();
+  e.target.reset();
+}
+
+// Открытие модального окна с нужной вкладкой
 openOrderModal = function(planName, type) {
-  originalOpenOrderModal(planName);
-  if (type === 'eu') {
+  const modal = document.getElementById('order-modal');
+  const title = document.getElementById('order-modal-title');
+  if (title && planName) {
+    title.textContent = planName;
+  }
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (type === 'instant') {
+    switchReqTab('instant');
+  } else if (type === 'ua') {
+    switchReqTab('privat');
+  } else if (type === 'donate' || type === 'eu') {
     switchReqTab('paypal');
   } else {
-    switchReqTab('privat');
+    switchReqTab('instant');
   }
 };
+
+function copyToClipboard(text, msg) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert(msg);
+    }).catch(() => {
+      fallbackCopy(text, msg);
+    });
+  } else {
+    fallbackCopy(text, msg);
+  }
+}
+
+function fallbackCopy(text, msg) {
+  const input = document.createElement('textarea');
+  input.value = text;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+  alert(msg);
+}
 
 // ==========================================
 // Защита реквизитов от спам-ботов и парсеров

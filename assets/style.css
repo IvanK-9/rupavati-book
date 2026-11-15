@@ -2266,3 +2266,96 @@ section {
     gap: 20px;
   }
 }
+
+/* DONATION CALCULATOR, INSTANT CHECKOUT & MANUAL VERIFICATION */
+.donation-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 12px 0 8px;
+}
+
+.donation-chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: #FFF;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+.donation-chip.active, .donation-chip:hover {
+  background: var(--color-saffron);
+  color: #FFF;
+  border-color: var(--color-saffron);
+}
+
+.donation-input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.donation-input-wrap .cur-symbol {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-sage-dark);
+}
+
+.donation-input-wrap input {
+  width: 90px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-sage-dark);
+}
+
+.instant-delivery-banner {
+  background: #EBF5EE;
+  border: 1px solid #709775;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.instant-delivery-banner h4 {
+  margin: 0 0 6px 0;
+  color: #2D5A27;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instant-delivery-banner p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.verification-notice {
+  background: #FFF9E6;
+  border-left: 4px solid var(--color-saffron);
+  padding: 12px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px;
+  color: #6B5500;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
