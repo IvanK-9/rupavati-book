@@ -458,34 +458,40 @@ img {
   text-decoration: underline;
 }
 
-/* 3D BOOK MOCKUP */
+/* 3D BOOK MOCKUP (Увеличен на 27% и выровнен по правому краю контейнера) */
 .hero-visual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .book-container {
   position: relative;
   perspective: 1200px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .book-card {
   position: relative;
-  width: 320px;
+  width: 405px;
+  max-width: 100%;
   border-radius: 6px 14px 14px 6px;
   overflow: hidden;
   box-shadow: var(--shadow-book);
-  transform: rotateY(-14deg) rotateX(4deg);
+  transform: rotateY(-12deg) rotateX(3deg);
+  transform-origin: right center;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: #FFF;
 }
 
 .book-card:hover {
   transform: rotateY(0deg) rotateX(0deg) translateY(-8px);
-  box-shadow: 0 25px 50px rgba(42, 36, 32, 0.22);
+  box-shadow: 0 28px 56px rgba(42, 36, 32, 0.24);
 }
 
 .book-cover-img {
@@ -1838,8 +1844,13 @@ img {
     font-size: 40px;
   }
 
+  .hero-visual {
+    justify-content: flex-end;
+  }
+
   .book-card {
-    width: 270px;
+    width: 340px;
+    transform-origin: right center;
   }
 
   .hero-stats {
@@ -1944,8 +1955,13 @@ img {
     justify-content: center;
   }
 
+  .hero-visual {
+    justify-content: center;
+  }
+
   .book-card {
-    width: 250px;
+    width: 290px;
+    max-width: 88vw;
     transform: rotateY(0deg) rotateX(0deg);
   }
 
