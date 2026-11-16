@@ -620,21 +620,21 @@ const backstageStories = [
     tag: '<i class="fa-solid fa-compass"></i> Вдохновение в пути',
     title: 'Еда объединяет сердца',
     quote: '«Вдохновляемся старинными улочками и собираем лучшие вкусы и специи мира для книги!»',
-    sub: 'Рупавати & Иван • Gamla Stan 🏛️'
+    sub: 'Рупавати & Иван • Gamla Stan <svg class="svg-icon svg-landmark" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="4" y1="18" x2="20" y2="18"></line><line x1="4" y1="11" x2="20" y2="11"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg>'
   },
   {
     img: 'assets/images/backstage_3d.jpg',
     tag: '<i class="fa-solid fa-glasses"></i> 3D-Контроль качества',
     title: 'Кулинарный спецназ',
     quote: '«Смотрим на Аюрведу и специи в новом измерении! Все рецепты протестированы и одобрены на 100%.»',
-    sub: 'Рупавати & Иван • Новое измерение вкуса 😎'
+    sub: 'Рупавати & Иван • Новое измерение вкуса <svg class="svg-icon svg-glasses" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><line x1="14" y1="15" x2="10" y2="15"/><path d="M2.5 13 4 7h16l1.5 6"/></svg>'
   },
   {
     img: 'assets/images/author_backstage.jpg',
     tag: '<i class="fa-solid fa-heart"></i> Команда с любовью',
     title: 'Главный дегустатор',
     quote: '«За каждым великим поваром стоит тот, кто с любовью моет кастрюли, дегустирует рецепты и верстает сайты!»',
-    sub: 'Рупавати & Иван • Намаскар 🙏'
+    sub: 'Рупавати & Иван • Намаскар <svg class="svg-icon svg-lotus" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><path d="M12 2C10.8 5 8.5 7.8 8.5 11.5c0 2.2 1.5 4.1 3.5 4.8 2-.7 3.5-2.6 3.5-4.8 0-3.7-2.3-6.5-3.5-9.5zm-5 4.2c-1.5 1.8-2.4 4.1-2.4 6.3 0 2.3 1.6 4.2 4.2 4.7-.7-1.5-.9-3.2-.7-4.9.3-2.1 1.4-4.2 2.4-5.5-.9-.5-2.2-.8-3.5-.6zm10 0c-1.3-.2-2.6.1-3.5.6 1 1.3 2.1 3.4 2.4 5.5.2 1.7 0 3.4-.7 4.9 2.6-.5 4.2-2.4 4.2-4.7 0-2.2-.9-4.5-2.4-6.3zM3 19.5h18v1.5H3v-1.5z"/></svg>'
   }
 ];
 
@@ -670,7 +670,7 @@ function updateBackstageContent() {
   if (tagEl) tagEl.innerHTML = story.tag;
   if (titleEl) titleEl.textContent = story.title;
   if (quoteEl) quoteEl.textContent = story.quote;
-  if (subEl) subEl.textContent = story.sub;
+  if (subEl) subEl.innerHTML = story.sub;
 }
 
 function toggleAuthorFlip() {

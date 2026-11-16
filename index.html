@@ -23,13 +23,18 @@
   <!-- ВЕРХНЯЯ БЛАГОСТНАЯ СТРОКА-УВЕДОМЛЕНИЕ -->
   <div class="top-announcement">
     <div class="container flex-between">
-      <span><i class="fa-solid fa-heart-pulse"></i> Намаскар! Пища, приготовленная с молитвой и любовью, исцеляет тело и успокаивает ум 🙏</span>
+      <span><i class="fa-solid fa-heart-pulse"></i> Намаскар! Пища, приготовленная с молитвой и любовью, исцеляет тело и успокаивает ум <svg class="svg-icon svg-lotus" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><path d="M12 2C10.8 5 8.5 7.8 8.5 11.5c0 2.2 1.5 4.1 3.5 4.8 2-.7 3.5-2.6 3.5-4.8 0-3.7-2.3-6.5-3.5-9.5zm-5 4.2c-1.5 1.8-2.4 4.1-2.4 6.3 0 2.3 1.6 4.2 4.2 4.7-.7-1.5-.9-3.2-.7-4.9.3-2.1 1.4-4.2 2.4-5.5-.9-.5-2.2-.8-3.5-.6zm10 0c-1.3-.2-2.6.1-3.5.6 1 1.3 2.1 3.4 2.4 5.5.2 1.7 0 3.4-.7 4.9 2.6-.5 4.2-2.4 4.2-4.7 0-2.2-.9-4.5-2.4-6.3zM3 19.5h18v1.5H3v-1.5z"/></svg></span>
       <div class="lang-switch">
         <button class="lang-btn active" data-lang="ru">RU</button>
         <span class="sep">|</span>
         <button class="lang-btn" data-lang="en">EN</button>
         <span class="sep">|</span>
-        <button class="lang-btn" data-lang="ua">🇺🇦 UKR</button>
+        <button class="lang-btn" data-lang="ua">
+          <svg class="svg-flag" viewBox="0 0 16 11" width="16" height="11" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect width="16" height="5.5" fill="#0057B7"/>
+            <rect y="5.5" width="16" height="5.5" fill="#FFD700"/>
+          </svg>UKR
+        </button>
       </div>
     </div>
   </div>
@@ -506,13 +511,13 @@
   <section id="author" class="section author-section">
     <div class="container author-grid">
       <div class="author-img-wrapper">
-        <div class="author-frame flip-card" id="author-flip-card" onclick="toggleAuthorFlip()" title="Нажмите, чтобы заглянуть за кулисы ✨">
+        <div class="author-frame flip-card" id="author-flip-card" onclick="toggleAuthorFlip()" title="Нажмите, чтобы заглянуть за кулисы">
           <div class="flip-card-inner">
             <!-- Лицевая сторона: Рупавати -->
             <div class="flip-card-front">
               <img src="assets/images/author_rupavati.jpg" alt="Рупавати — автор книги, шеф-повар и натуропат" class="author-photo">
               <div class="flip-hint-badge">
-                <i class="fa-solid fa-sparkles"></i> <span>Нажмите на фото ✨</span>
+                <i class="fa-solid fa-sparkles"></i> <span>Нажмите на фото</span>
               </div>
             </div>
             <!-- Обратная сторона: Пасхалка (Рандомные фото: Стокгольм, 3D-очки, Смех) -->
@@ -522,7 +527,7 @@
                 <div class="flip-back-tag" id="backstage-tag"><i class="fa-solid fa-compass"></i> Вдохновение в пути</div>
                 <h4 id="backstage-title">Еда объединяет сердца</h4>
                 <p id="backstage-quote">«Вдохновляемся старинными улочками и собираем лучшие вкусы и специи мира для книги!»</p>
-                <span class="flip-back-sub" id="backstage-sub">Рупавати & Иван • Gamla Stan 🏛️</span>
+                <span class="flip-back-sub" id="backstage-sub">Рупавати & Иван • Gamla Stan <svg class="svg-icon svg-landmark" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="4" y1="18" x2="20" y2="18"></line><line x1="4" y1="11" x2="20" y2="11"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
                 <div class="flip-back-reset"><i class="fa-solid fa-rotate-left"></i> Нажмите, чтобы перевернуть обратно</div>
               </div>
             </div>
@@ -599,17 +604,17 @@
           <div class="tg-phone-frame">
             <div class="tg-msg tg-author-msg">
               <strong>Рупавати • Пища с любовью</strong>
-              <p>Доброе утро, дорогие! Намаскар 🙏 Сегодня готовим золотистый суп Дал. Секрет его легкости — в правильной обжарке кумина в масле гхи...</p>
+              <p>Доброе утро, дорогие! Намаскар <svg class="svg-icon svg-lotus" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" style="vertical-align:-2px; margin-left:2px;"><path d="M12 2C10.8 5 8.5 7.8 8.5 11.5c0 2.2 1.5 4.1 3.5 4.8 2-.7 3.5-2.6 3.5-4.8 0-3.7-2.3-6.5-3.5-9.5zm-5 4.2c-1.5 1.8-2.4 4.1-2.4 6.3 0 2.3 1.6 4.2 4.2 4.7-.7-1.5-.9-3.2-.7-4.9.3-2.1 1.4-4.2 2.4-5.5-.9-.5-2.2-.8-3.5-.6zm10 0c-1.3-.2-2.6.1-3.5.6 1 1.3 2.1 3.4 2.4 5.5.2 1.7 0 3.4-.7 4.9 2.6-.5 4.2-2.4 4.2-4.7 0-2.2-.9-4.5-2.4-6.3zM3 19.5h18v1.5H3v-1.5z"/></svg> Сегодня готовим золотистый суп Дал. Секрет его легкости — в правильной обжарке кумина в масле гхи...</p>
               <span class="tg-time">09:15</span>
             </div>
             <div class="tg-msg tg-reader-msg">
               <strong>Ольга:</strong>
-              <p>Рупавати, спасибо огромное за рецепт кутабов! Муж съел три штуки и попросил готовить так всегда! ❤️</p>
+              <p>Рупавати, спасибо огромное за рецепт кутабов! Муж съел три штуки и попросил готовить так всегда! <svg class="svg-icon svg-heart" viewBox="0 0 24 24" width="13" height="13" fill="#E53935" aria-hidden="true" style="vertical-align:-2px; margin-left:2px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></p>
               <span class="tg-time">11:42</span>
             </div>
             <div class="tg-msg tg-reader-msg">
               <strong>Михаил:</strong>
-              <p>После перехода на рецепты по дошам прошла тяжесть в желудке. Низкий поклон! 🙏</p>
+              <p>После перехода на рецепты по дошам прошла тяжесть в желудке. Низкий поклон! <svg class="svg-icon svg-lotus" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true" style="vertical-align:-2px; margin-left:2px;"><path d="M12 2C10.8 5 8.5 7.8 8.5 11.5c0 2.2 1.5 4.1 3.5 4.8 2-.7 3.5-2.6 3.5-4.8 0-3.7-2.3-6.5-3.5-9.5zm-5 4.2c-1.5 1.8-2.4 4.1-2.4 6.3 0 2.3 1.6 4.2 4.2 4.7-.7-1.5-.9-3.2-.7-4.9.3-2.1 1.4-4.2 2.4-5.5-.9-.5-2.2-.8-3.5-.6zm10 0c-1.3-.2-2.6.1-3.5.6 1 1.3 2.1 3.4 2.4 5.5.2 1.7 0 3.4-.7 4.9 2.6-.5 4.2-2.4 4.2-4.7 0-2.2-.9-4.5-2.4-6.3zM3 19.5h18v1.5H3v-1.5z"/></svg></p>
               <span class="tg-time">14:05</span>
             </div>
           </div>
@@ -776,7 +781,7 @@
             <span class="logo-subtitle">Пища с любовью</span>
           </div>
         </div>
-        <p class="footer-motto">Готовьте с открытым сердцем. Пусть каждое блюдо приносит радость, здоровье и мир в ваш дом. Намаскар 🙏</p>
+        <p class="footer-motto">Готовьте с открытым сердцем. Пусть каждое блюдо приносит радость, здоровье и мир в ваш дом. Намаскар <svg class="svg-icon svg-lotus" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px; margin-left:3px;"><path d="M12 2C10.8 5 8.5 7.8 8.5 11.5c0 2.2 1.5 4.1 3.5 4.8 2-.7 3.5-2.6 3.5-4.8 0-3.7-2.3-6.5-3.5-9.5zm-5 4.2c-1.5 1.8-2.4 4.1-2.4 6.3 0 2.3 1.6 4.2 4.2 4.7-.7-1.5-.9-3.2-.7-4.9.3-2.1 1.4-4.2 2.4-5.5-.9-.5-2.2-.8-3.5-.6zm10 0c-1.3-.2-2.6.1-3.5.6 1 1.3 2.1 3.4 2.4 5.5.2 1.7 0 3.4-.7 4.9 2.6-.5 4.2-2.4 4.2-4.7 0-2.2-.9-4.5-2.4-6.3zM3 19.5h18v1.5H3v-1.5z"/></svg></p>
         <div class="footer-socials">
           <a href="https://t.me/+6Lg6QRCJUhNkYmRi" target="_blank" title="Telegram-канал"><i class="fa-brands fa-telegram"></i></a>
           <a href="javascript:void(0)" onclick="openSecureEmail()" title="Написать автору (Email)"><i class="fa-solid fa-envelope"></i></a>
@@ -883,102 +888,13 @@
     </div>
   </div>
 
-  <!-- МОДАЛЬНОЕ ОКНО: ОПЛАТА И РЕКВИЗИТЫ РУПАВАТИ -->
-  <div id="order-modal" class="modal">
-    <div class="modal-content modal-order">
-      <button class="modal-close" onclick="closeOrderModal()" aria-label="Закрыть">&times;</button>
-      <div class="modal-header">
-        <h3 id="order-modal-title">Оплата и получение книги</h3>
-        <p>Реквизиты автора для оплат и донатов. Намаскар! 🙏</p>
-      </div>
-      <div class="modal-body">
-        
-        <!-- РЕКВИЗИТЫ С БЫСТРЫМ КОПИРОВАНИЕМ -->
-        <div class="requisites-box">
-          <!-- Вкладки способов -->
-          <div class="requisites-tabs">
-            <button class="req-tab-btn active" onclick="switchReqTab('privat')" id="tab-privat-btn">
-              <i class="fa-solid fa-building-columns"></i> Украина (Приват)
-            </button>
-            <button class="req-tab-btn" onclick="switchReqTab('paypal')" id="tab-paypal-btn">
-              <i class="fa-brands fa-paypal"></i> Европа / Мир (PayPal)
-            </button>
-          </div>
-
-          <!-- ПриватБанк (Защищено от спам-ботов) -->
-          <div class="req-content-pane active" id="pane-privat">
-            <div class="req-card">
-              <div class="req-card-label">Карта ПриватБанк (Украина)</div>
-              <div class="req-card-num" id="card-privat">5363 •••• •••• 4579</div>
-              <div class="req-card-holder">Получатель: <strong>Горб Юлия</strong></div>
-              <div class="flex-gap-10 mt-10" style="flex-wrap: wrap;">
-                <button type="button" class="btn btn-secondary btn-sm" onclick="copySecureData('card')">
-                  <i class="fa-regular fa-copy"></i> Скопировать номер
-                </button>
-                <button type="button" class="btn btn-outline btn-sm" id="btn-reveal-card" onclick="revealSecureData('card')">
-                  <i class="fa-regular fa-eye"></i> Показать номер
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- PayPal (Защищено от спам-ботов) -->
-          <div class="req-content-pane" id="pane-paypal">
-            <div class="req-card">
-              <div class="req-card-label">PayPal (Европа и весь мир)</div>
-              <div class="req-card-num" id="paypal-email">yu••••••@gmail.com</div>
-              <div class="req-card-holder">Получатель: <strong>Юлия Горб</strong></div>
-              <div class="flex-gap-10 mt-10" style="flex-wrap: wrap;">
-                <button type="button" class="btn btn-secondary btn-sm" onclick="copySecureData('paypal')">
-                  <i class="fa-regular fa-copy"></i> Скопировать email
-                </button>
-                <button type="button" class="btn btn-outline btn-sm" id="btn-reveal-paypal" onclick="revealSecureData('paypal')">
-                  <i class="fa-regular fa-eye"></i> Показать email
-                </button>
-                <button type="button" class="btn btn-outline btn-sm" onclick="openSecurePayPal()">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть PayPal
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Форма для получения ссылки на PDF -->
-        <form onsubmit="handleOrderSubmit(event)" class="mt-20">
-          <div class="form-group">
-            <label>Выбранный вариант:</label>
-            <input type="text" id="order-plan-input" readonly class="form-input readonly-input">
-          </div>
-          <div class="form-group">
-            <label>Куда отправить PDF-книгу (114 стр.) после перевода:</label>
-            <input type="email" placeholder="Ваш E-mail (обязательно)" required class="form-input">
-          </div>
-          <div class="form-group">
-            <label>Ваш Telegram (для быстрой связи и дублирования):</label>
-            <input type="text" placeholder="@username" class="form-input">
-          </div>
-          <button type="submit" class="btn btn-primary btn-block btn-lg">
-            Я оплатил / подтвердить отправку книги
-          </button>
-          <p class="form-disclaimer text-center">
-            <i class="fa-solid fa-shield-heart"></i> От сердца к сердцу. Книга будет отправлена вам сразу после перевода.
-          </p>
-        </form>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Main JavaScript File -->
-  <script src="assets/script.js"></script>
-</body>
-</html>  <!-- MODAL: ОФОРМЛЕНИЕ ЗАКАЗА И РЕКВИЗИТЫ -->
+  <!-- MODAL: ОФОРМЛЕНИЕ ЗАКАЗА И РЕКВИЗИТЫ -->
   <div class="modal" id="order-modal">
     <div class="modal-dialog">
       <button class="modal-close" onclick="closeOrderModal()">&times;</button>
       <div class="modal-header">
         <h3 id="order-modal-title">Оплата и получение книги</h3>
-        <p>Выберите удобный способ: автоматическая моментальная выдача или перевод напрямую автору 🙏</p>
+        <p>Выберите удобный способ: автоматическая моментальная выдача или перевод напрямую автору</p>
       </div>
       <div class="modal-body">
         
@@ -1124,4 +1040,7 @@
     </div>
   </div>
 
-  
+  <!-- Main JavaScript File -->
+  <script src="assets/script.js"></script>
+</body>
+</html>
