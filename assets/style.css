@@ -56,6 +56,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -66,6 +68,8 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   padding-bottom: 70px; /* запас под мобильную нижнюю панель */
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 @media (min-width: 993px) {
@@ -2142,29 +2146,107 @@ img {
   text-transform: uppercase;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 1;
+/* НАВИГАЦИЯ ДЛЯ ДЕСКТОПА (от 993px) */
+@media (min-width: 993px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 1;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    white-space: nowrap !important;
+    padding: 6px 4px;
+    line-height: 1.2;
+    border: none;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-sage);
+  }
+
+  .nav-quiz-link {
+    color: var(--color-saffron-text) !important;
+    font-weight: 700 !important;
+  }
+
+  .btn-header {
+    display: inline-flex !important;
+    min-height: 42px;
+    padding: 9px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
 }
 
-.nav-links a {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-text-main);
-  white-space: nowrap !important;
-  padding: 6px 4px;
-  line-height: 1.2;
-}
+/* МОБИЛЬНАЯ НАВИГАЦИЯ И ШАПКА (до 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(250, 247, 242, 0.98);
+    backdrop-filter: blur(14px);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 12px;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+  }
 
-.nav-links a:hover {
-  color: var(--color-sage);
-}
+  .nav-links.active {
+    display: flex !important;
+  }
 
-.nav-quiz-link {
-  color: var(--color-saffron-text) !important;
-  font-weight: 700 !important;
+  .nav-links a {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    white-space: normal !important;
+    color: var(--color-text-main);
+  }
+
+  .nav-quiz-link {
+    color: var(--color-saffron-text) !important;
+    font-weight: 700 !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    color: var(--color-sage-dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .btn-header {
+    display: none !important; /* На смартфонах кнопка покупки в нижней прилипающей панели */
+  }
 }
 
 .header-actions {
@@ -2172,13 +2254,6 @@ img {
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-}
-
-.btn-header {
-  min-height: 42px;
-  padding: 9px 20px;
-  font-size: 14px;
-  white-space: nowrap;
 }
 
 .btn-tg-header {
@@ -2564,5 +2639,17 @@ section {
   }
   .flip-back-overlay p {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .top-announcement .flex-between {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+  .top-announcement span {
+    font-size: 11px;
+    line-height: 1.4;
   }
 }
