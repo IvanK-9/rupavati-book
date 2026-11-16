@@ -59,6 +59,7 @@
         <a href="#recipes" data-ru="Рецепты" data-en="Recipes">Рецепты</a>
         <a href="#quiz" class="nav-quiz-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-ru="Тест на Доши" data-en="Dosha Quiz">Тест на Доши</span></a>
         <a href="#author" data-ru="Об авторе" data-en="Author">Об авторе</a>
+        <a href="#roadmap" data-ru="Роадмап" data-en="Roadmap">Роадмап</a>
         <a href="#order" class="nav-order-link" data-ru="Реквизиты" data-en="Payment">Реквизиты</a>
       </nav>
 
@@ -623,52 +624,96 @@
     </div>
   </section>
 
-  <!-- СЕКЦИЯ-ВИЗИОНЕР: БУДУЩАЯ ЭКОСИСТЕМА (ЗАГЛУШКИ ДЛЯ МАСШТАБИРОВАНИЯ) -->
-  <section id="ecosystem" class="section ecosystem-section">
+  <!-- СЕКЦИЯ: ДОРОЖНАЯ КАРТА & ПЛАНЫ РАЗВИТИЯ ПРОЕКТА -->
+  <section id="roadmap" class="section roadmap-section">
     <div class="container">
       <div class="section-header text-center">
-        <span class="sub-heading-accent">Перспектива развития</span>
-        <h2 class="section-title">Экосистема проектов Рупавати</h2>
-        <p class="section-desc">Книга — это только первая ступень. Мы создаем пространство целостного здоровья, объединяющее обучение, клуб и личные практики.</p>
+        <span class="sub-heading-accent"><i class="fa-solid fa-compass"></i> Дорожная карта проекта</span>
+        <h2 class="section-title" data-ru="Роадмап: от кулинарной книги к живой экосистеме" data-en="Roadmap: From Cookbook to Mindful Ecosystem">Роадмап: от кулинарной книги к живой экосистеме</h2>
+        <p class="section-desc" data-ru="Книга — это только первая ступень. Мы пошагово создаем пространство целостного здоровья, объединяющее ресторанное мастерство, ведическую мудрость и современные технологии." data-en="The book is just the first step. Step by step, we create a living wellness ecosystem uniting chef craftsmanship, Vedic wisdom, and modern technologies.">Книга — это только первая ступень. Мы пошагово создаем пространство целостного здоровья, объединяющее ресторанное мастерство, ведическую мудрость и современные технологии.</p>
       </div>
 
-      <div class="ecosystem-grid">
-        <!-- Сервис 1: Закрытый клуб -->
-        <div class="service-card" onclick="openEcosystemModal('Аюрведический клуб подписки', 'Ежемесячный клуб здорового питания: сезонные меню на каждую неделю, списки покупок, закрытые прямые эфиры с Рупавати и сообщество поддержки.')">
-          <div class="service-badge soon">В разработке</div>
-          <div class="service-icon"><i class="fa-solid fa-users-rays"></i></div>
-          <h4>Закрытый клуб «Пища в Благости»</h4>
-          <p>Еженедельное сезонное меню под ключ, чек-листы покупок и живые кулинарные эфиры с разбором ваших блюд.</p>
-          <span class="service-more">Подробнее о модуле →</span>
+      <!-- ТРИ ЭТАПА РАЗВИТИЯ -->
+      <div class="roadmap-grid">
+        <!-- ФАЗА 1: РЕАЛИЗОВАНО -->
+        <div class="roadmap-card">
+          <div class="rm-card-header">
+            <span class="rm-phase-tag">Этап 1 • Релиз 1.0</span>
+            <span class="rm-badge done"><i class="fa-solid fa-circle-check"></i> Реализовано</span>
+          </div>
+          <h3>Цифровой фундамент</h3>
+          <p class="rm-card-desc">Создание скоростной, защищённой визитки автора с интерактивными инструментами.</p>
+          <ul class="rm-feature-list done-list">
+            <li><i class="fa-solid fa-circle-check"></i> <div><strong>Безопасные платежи:</strong> реквизиты скрыты от спам-ботов (Украина, Monobank Apple Pay, PayPal, Gumroad).</div></li>
+            <li><i class="fa-solid fa-circle-check"></i> <div><strong>Тест на 3 Доши:</strong> интерактивный подбор рецептов из книги под конституцию тела.</div></li>
+            <li><i class="fa-solid fa-circle-check"></i> <div><strong>3 языка (RU | EN | UKR):</strong> мгновенное переключение на чистых векторных SVG.</div></li>
+            <li><i class="fa-solid fa-circle-check"></i> <div><strong>Интерактивная 3D-книга:</strong> реалистичный предпросмотр разворотов и пасхалка с фото.</div></li>
+            <li><i class="fa-solid fa-circle-check"></i> <div><strong>100% мобильная вёрстка:</strong> адаптация под экраны смартфонов без горизонтального скролла.</div></li>
+          </ul>
         </div>
 
-        <!-- Сервис 2: Онлайн-курс -->
-        <div class="service-card" onclick="openEcosystemModal('Видео-курс: Специи и Аюрведа', 'Глубокий практический видео-курс от Рупавати: как специи лечат болезни, трансформируют вкус привычных овощей и гармонизируют эмоциональный фон.')">
-          <div class="service-badge soon">Скоро</div>
-          <div class="service-icon"><i class="fa-solid fa-play"></i></div>
-          <h4>Видео-курс «Специи — душа Земли»</h4>
-          <p>Пошаговые видео-уроки по искусству специй, приготовлению лечебного Гхи и соусов на уровне шеф-повара.</p>
-          <span class="service-more">Подробнее о модуле →</span>
+        <!-- ФАЗА 2: В РАЗРАБОТКЕ -->
+        <div class="roadmap-card active-phase">
+          <div class="rm-card-header">
+            <span class="rm-phase-tag" style="color: var(--color-saffron-text);">Этап 2 • В работе</span>
+            <span class="rm-badge in-progress"><i class="fa-solid fa-spinner fa-spin"></i> В разработке</span>
+          </div>
+          <h3>Ведический ритм & Автор</h3>
+          <p class="rm-card-desc">Гармонизация питания с космическими циклами и раскрытие живой индивидуальности автора.</p>
+          <ul class="rm-feature-list active-list">
+            <li><i class="fa-solid fa-moon"></i> <div><strong>«Лунный компас & Экадаши»:</strong> фазы Луны, дни поста и меню без зернобобовых из книги.</div></li>
+            <li><i class="fa-solid fa-sun"></i> <div><strong>«Планета дня по Джйотиш»:</strong> управители дней недели и специя-гармонизатор к обеду.</div></li>
+            <li><i class="fa-solid fa-microphone-lines"></i> <div><strong>«Голос автора (1 минута)»:</strong> тёплое живое аудио-приветствие Рупавати прямо на сайте.</div></li>
+            <li><i class="fa-solid fa-pen-fancy"></i> <div><strong>«Заметки на полях от Юли»:</strong> секреты ресторанного шефа, тонкости теста и добрый юмор.</div></li>
+            <li><i class="fa-solid fa-wand-magic-sparkles"></i> <div><strong>Саттва как праздник:</strong> европейские десерты (Наполеон, чизкейк) в чистой благости.</div></li>
+          </ul>
         </div>
 
-        <!-- Сервис 3: Ретриты -->
-        <div class="service-card" onclick="openEcosystemModal('Кулинарные и йога-ретриты', 'Выездные программы на природе: глубокая йога, очищение организма, медитации и авторское саттвичное питание от Рупавати трижды в день.')">
-          <div class="service-badge planned">Планируется</div>
-          <div class="service-icon"><i class="fa-solid fa-mountain-sun"></i></div>
-          <h4>Выездные йога- и детокс-ретриты</h4>
-          <p>Живые программы перезагрузки тела и ума: йога, лесной воздух, лекции по Аюрведе и персональное питание от автора.</p>
-          <span class="service-more">Подробнее о модуле →</span>
-        </div>
-
-        <!-- Сервис 4: Индивидуальные консультации -->
-        <div class="service-card" onclick="openEcosystemModal('Персональный аюрведический разбор', 'Индивидуальная консультация: детальный анализ конституции тела (Пракрити и Викрити), составление персональной карты продуктов и режима дня.')">
-          <div class="service-badge soon">Запись в лист ожидания</div>
-          <div class="service-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
-          <h4>Персональная карта питания</h4>
-          <p>Индивидуальный подбор продуктов, трав и режима дня под вашу конкретную дошу и состояние здоровья.</p>
-          <span class="service-more">Подробнее о модуле →</span>
+        <!-- ФАЗА 3: ПЛАНИРУЕТСЯ -->
+        <div class="roadmap-card">
+          <div class="rm-card-header">
+            <span class="rm-phase-tag">Этап 3 • Перспектива</span>
+            <span class="rm-badge planned"><i class="fa-solid fa-clock"></i> Планируется</span>
+          </div>
+          <h3>Сообщество & Масштаб</h3>
+          <p class="rm-card-desc">Развитие клубного формата, глубоких обучающих курсов и выездных программ.</p>
+          <ul class="rm-feature-list planned-list">
+            <li><i class="fa-solid fa-shield-heart"></i> <div><strong>«Защита в дни Затмений»:</strong> рекомендации и умиротворяющие блюда в периоды Раху/Кету.</div></li>
+            <li><i class="fa-solid fa-users-rays"></i> <div><strong>Клуб «Пища в Благости»:</strong> сезонные меню на каждую неделю, списки покупок и эфиры.</div></li>
+            <li><i class="fa-solid fa-play"></i> <div><strong>Видео-курс «Специи — душа Земли»:</strong> пошаговые видео-уроки по искусству специй и Гхи.</div></li>
+            <li><i class="fa-solid fa-mountain-sun"></i> <div><strong>Йога- и детокс-ретриты:</strong> выездные программы с авторским саттвичным питанием.</div></li>
+            <li><i class="fa-solid fa-file-waveform"></i> <div><strong>Персональные карты питания:</strong> индивидуальный подбор рациона по дошам.</div></li>
+          </ul>
         </div>
       </div>
+
+      <!-- КАРТОЧКА СОЗИДАТЕЛЕЙ (ДУХОВНЫЙ ТАНДЕМ) -->
+      <div class="roadmap-creators-box">
+        <div class="creators-header">
+          <span class="creators-tag">Духовный тандем созидателей</span>
+          <h4>Единство вкуса, мудрости и технологий</h4>
+          <p>Сайт и книга развиваются в сотворчестве, где кулинарное мастерство объединяется с бережной цифровой архитектурой.</p>
+        </div>
+        <div class="creators-grid">
+          <div class="creator-card">
+            <img src="assets/images/author_rupavati.jpg" alt="Рупавати" class="creator-avatar">
+            <div class="creator-info">
+              <h5>Рупавати (Юлия)</h5>
+              <div class="creator-role">Автор книги • Шеф-повар • Мастер Аюрведы</div>
+              <p class="creator-desc">20+ лет ресторанного мастерства, знание тонких свойств трав и специй, кулинария как форма молитвы и любви.</p>
+            </div>
+          </div>
+          <div class="creator-card">
+            <div class="creator-avatar-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="creator-info">
+              <h5>Авирбхава (Иван)</h5>
+              <div class="creator-role">Архитектор экосистемы • Технический продюсер</div>
+              <p class="creator-desc">Воплощение духовных смыслов в чистый код, защита данных, интерактивные сервисы и техническое развитие проекта.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -796,7 +841,7 @@
           <li><a href="#author">Об авторе</a></li>
           <li><a href="#recipes">Примеры рецептов</a></li>
           <li><a href="#quiz">Тест на Доши</a></li>
-          <li><a href="#ecosystem">Будущие программы</a></li>
+          <li><a href="#roadmap">Роадмап развития</a></li>
         </ul>
       </div>
 
@@ -812,7 +857,7 @@
       <div class="footer-dev">
         <h5>О проекте</h5>
         <p class="dev-note">
-          <i class="fa-solid fa-code"></i> Сделано с теплом и благостью для Рупавати. Платформа готова к масштабированию и автоматизации оплат.
+          <i class="fa-solid fa-code"></i> Сделано с теплом и благостью. Духовный тандем Рупавати & Авирбхава.
         </p>
       </div>
     </div>

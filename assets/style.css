@@ -56,8 +56,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
 }
 
 body {
@@ -68,8 +67,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   padding-bottom: 70px; /* запас под мобильную нижнюю панель */
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
 }
 
 @media (min-width: 993px) {
@@ -916,15 +914,21 @@ img {
 }
 
 /* AUTHOR SECTION */
+.author-section {
+  padding-top: 32px;
+  padding-bottom: 70px;
+}
+
 .author-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 50px;
-  align-items: center;
+  align-items: start;
 }
 
 .author-img-wrapper {
-  position: relative;
+  position: sticky;
+  top: 90px;
 }
 
 .author-frame {
@@ -1275,6 +1279,251 @@ img {
   font-size: 10px;
   opacity: 0.6;
   margin-top: 4px;
+}
+
+/* ========================================================
+   ROADMAP / ДОРОЖНАЯ КАРТА ПРОЕКТА
+   ======================================================== */
+.roadmap-section {
+  background: #FAF7F2;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 60px 0 70px;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.roadmap-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(43, 62, 45, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-saffron);
+}
+
+.roadmap-card.active-phase {
+  border-color: var(--color-saffron);
+  box-shadow: 0 6px 20px rgba(184, 91, 53, 0.12);
+}
+
+.rm-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.rm-phase-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.rm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rm-badge.done {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #C8E6C9;
+}
+
+.rm-badge.in-progress {
+  background: #FFF8E1;
+  color: #914700;
+  border: 1px solid #FFE082;
+}
+
+.rm-badge.planned {
+  background: #F0F4F8;
+  color: #486581;
+  border: 1px solid #D9E2EC;
+}
+
+.roadmap-card h3 {
+  font-size: 22px;
+  color: var(--color-sage-dark);
+  margin-bottom: 8px;
+}
+
+.rm-card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.rm-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.rm-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--color-text-main);
+}
+
+.rm-feature-list li i {
+  margin-top: 3px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.rm-feature-list.done-list li i {
+  color: #2E7D32;
+}
+
+.rm-feature-list.active-list li i {
+  color: var(--color-saffron-text);
+}
+
+.rm-feature-list.planned-list li i {
+  color: var(--color-sage);
+}
+
+/* КАРТОЧКА СОЗИДАТЕЛЕЙ (ТАНДЕМ) */
+.roadmap-creators-box {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F1EA 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: 0 4px 16px rgba(43, 62, 45, 0.05);
+}
+
+.creators-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.creators-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-saffron-text);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.creators-header h4 {
+  font-size: 24px;
+  color: var(--color-sage-dark);
+  margin: 0 0 6px;
+}
+
+.creators-header p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.creators-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.creator-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.creator-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-saffron);
+  flex-shrink: 0;
+}
+
+.creator-avatar-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--color-sage-dark);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-saffron);
+}
+
+.creator-info h5 {
+  font-size: 17px;
+  margin: 0 0 3px;
+  color: var(--color-sage-dark);
+}
+
+.creator-role {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-saffron-text);
+  margin: 0 0 4px;
+}
+
+.creator-desc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .creators-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 /* ECOSYSTEM (ЗАГЛУШКИ ДЛЯ ПЕРСПЕКТИВЫ) */
