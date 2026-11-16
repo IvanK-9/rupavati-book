@@ -1321,6 +1321,86 @@ img {
   box-shadow: 0 6px 20px rgba(184, 91, 53, 0.12);
 }
 
+/* OVERLAY «В РАЗРАБОТКЕ» ДЛЯ ЭТАПОВ 2 И 3 */
+.roadmap-card.locked-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px dashed var(--color-border);
+  background: #FCFAF7;
+}
+
+.roadmap-card.locked-stage:hover {
+  transform: none;
+  box-shadow: 0 4px 16px rgba(43, 62, 45, 0.04);
+}
+
+.roadmap-card.locked-stage .rm-card-content-masked {
+  filter: blur(3.5px);
+  opacity: 0.35;
+  user-select: none;
+  pointer-events: none;
+}
+
+.rm-lock-curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(250, 248, 244, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  z-index: 10;
+  border-radius: var(--radius-lg);
+}
+
+.rm-lock-sign {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-saffron);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: 0 10px 30px rgba(145, 71, 0, 0.12);
+  max-width: 240px;
+}
+
+.rm-lock-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-saffron-soft);
+  color: var(--color-saffron-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.rm-lock-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-saffron-text);
+  margin: 0;
+}
+
+.rm-lock-desc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
 .rm-card-header {
   display: flex;
   align-items: center;
